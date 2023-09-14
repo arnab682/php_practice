@@ -5,6 +5,6 @@
 $name = 'Arnab';
 $age = 29;
 $country = 'Bangladesh';
-$info = "I am $name. I am $age old. I am from $country. I am working in Azim Group.";
+$info = "I am $name. I am $age year old. I am from $country. I am working in Azim Group.";
 
 echo $info;
