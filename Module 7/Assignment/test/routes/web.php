@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', [UserController::class, "index"]);
+
+Route::get('/about', [AboutController::class, "index"]);
+
+Route::post('/login', [UserController::class, "login"]);

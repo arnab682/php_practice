@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class AboutController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return 'Hello, Laravel!';
+        return "Hi! I am Arnab.";
     }
 
     /**
@@ -33,7 +33,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show()
+    public function show(string $id)
     {
         //
     }
@@ -41,7 +41,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(string $id)
     {
         //
     }
@@ -49,7 +49,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Request $r)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -57,20 +57,8 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(string $id)
     {
         //
-    }
-
-    public function login(Request $request){
-
-        $email = $request->input('email');
-        $password = $request->input('password');
-
-        if( $email == "arnab@gmail.com" && $password == "1234567"){
-            return 'Login successful';
-        } else {
-            return 'Invalid credentials';
-        }
     }
 }
