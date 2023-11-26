@@ -1,4 +1,4 @@
-@extends("Layouts.app")
+@extends("layout.app")
 @section("content")
 
 <!-- ======= Contact Section ======= -->

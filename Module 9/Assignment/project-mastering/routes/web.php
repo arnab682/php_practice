@@ -31,11 +31,8 @@ Route::get('/dashboard', function () {
 });
 
 //Portfolio
-Route::get("home",[HomeController::class,"Home"])->name('home');
-Route::get('about-me', [AboutController::class, 'index'])->name('about.me');
-Route::get("project",[ProjectsController::class,"Project"])->name('projects');
-Route::get("contact",[ContactController::class,"Contact"])->name('contact');
+Route::get("home",[HomeController::class,"home"])->name('home');
+Route::get('aboutme', [AboutController::class, 'index'])->name('aboutme');
+Route::get("project",[ProjectsController::class,"project"])->name('project');
+Route::get("contact",[ContactController::class,"contact"])->name('contact');
 
-Route::get('/p', function () {
-    return view('layout.app');
-});

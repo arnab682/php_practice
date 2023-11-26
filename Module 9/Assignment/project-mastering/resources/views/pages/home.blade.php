@@ -1,4 +1,4 @@
-@extends("Layouts.app")
+@extends("layout.app")
 @section("content")
 
 
@@ -88,7 +88,4 @@
     </div>
   </section><!-- End Featured Services Section -->
 
-{{-- @include('ContentArea.AboutMe') --}}
-{{-- @include('ContentArea.Projects')
-@include('ContentArea.Contact') --}}
 @endsection
