@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title', 200);
             $table->string('short_des', 500);
-            $table->string('price', 50);
+            //$table->string('price', 50);
+            $table->decimal('price', 10, 2);
+            $table->longText('description');
             $table->boolean('discount');
             $table->string('discount_price', 50);
             $table->string('image', 200);
