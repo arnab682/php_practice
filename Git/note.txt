@@ -1,0 +1,45 @@
+//Git Initiate
+git init 
+//git local config
+git config user.name ""
+git config user.email ""
+//git Global config
+git config --global user.name ""
+git config --global user.email ""
+//Git status check
+git status
+//staging area
+git add file_name
+git add --all
+git add .
+//git commit
+git commit -m ""
+//git log
+git log
+git log --oneline
+//back my old code commit wise
+git checkout 23654fc (23654fc from git log)
+//Make branch
+git branch branch_name
+//branch check
+git branch
+//branch change
+git checkout branch_name
+//branch make and checkout
+git checkout -b branch_name
+//branch delete
+git branch -D branch_name
+//git branch merge
+at first checkout my main branch 
+git checkout main
+git merge branch_name (which branch i want to merge with main branch)
+git log --oneline
+//check diffenent commit vs commit
+git diff 34253fc fa546hc
+
+
+//git push
+//add remote link
+git remote add origin git_link
+git push
+git origin master
