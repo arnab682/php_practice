@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,12 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', function () {
-    $products = DB::table('products')
-    ->select('Categories', DB::raw('COUNT(*) as price'))
-    //->groupBy('Categories')
-    ->havingRaw('COUNT(*) > 5')
-    ->get();
-
-    return $products;
+Route::get('/dashboard', function () {
+    return view('backend/pages/dashboard');
 });
+
+Route::get('/product', function () {
+    return view('backend/pages/product/index');
+});
+
+Route::resource('products', ProductController::class);
