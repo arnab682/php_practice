@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Carbon\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,13 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', function () {
-    return view('backend/pages/dashboard');
+    $total = DB::table('products')->count();
+    $today = DB::table('products')->whereDate('created_at', Carbon::now())->count();
+    $yesterday = DB::table('products')->whereDate('created_at', Carbon::yesterday())->count();
+    $month = DB::table('products')->whereMonth('created_at', Carbon::now())->count();
+    $lastmonth = DB::table('products')->whereMonth('created_at', Carbon::now()->subMonth()->month)->count();
+    //dd($lastmonth);
+    return view('backend/pages/dashboard', compact('total', 'today', 'yesterday', 'month', 'lastmonth'));
 });
 
 Route::get('/product', function () {
