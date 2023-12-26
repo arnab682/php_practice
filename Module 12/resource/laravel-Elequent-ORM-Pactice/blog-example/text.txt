@@ -1,0 +1,14 @@
+Naming Convention
+
+
+users---User
+product_lists--->ProductList
+
+php artisan make:model Comment
+php artisan make:model Post
+php artisan make:model PostTag
+php artisan make:model Profile
+php artisan make:model Tag
+php artisan make:model User
+
+
