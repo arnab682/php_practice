@@ -15,6 +15,11 @@
         
         <form method="post" action="{{route('buses.update', $bus->id)}}" enctype="multipart/form-data">@csrf @method('put')
             <div class="form-group">
+                <label for="">Brand Name</label>
+                <input type="text" name="brand_name" class="form-control" id="" value="{{$bus->brand_name}}">
+                <small id="" class="form-text text-muted">Give Brand Name </small>
+            </div>
+            <div class="form-group">
                 <label for="">Bus Number</label>
                 <input type="text" name="bus_number" class="form-control" id="" value="{{$bus->bus_number}}">
                 <small id="" class="form-text text-muted">Give Bus Number </small>

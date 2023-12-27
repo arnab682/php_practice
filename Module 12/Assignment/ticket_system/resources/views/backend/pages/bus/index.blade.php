@@ -17,6 +17,7 @@
     <table class="table table-bordered" id="table">
       <tr>
         <th width="150px">No</th>
+        <th>Brand Name</th>
         <th>Bus Number</th>
         <th>Bus Seats </th>
         <th>Remark</th>
@@ -31,6 +32,7 @@
       @foreach ($buses as $value)
         <tr>
           <td>{{ $no++ }}</td>
+          <td>{{ $value->brand_name }}</td>
           <td>{{ $value->bus_number }}</td>
           <td>{{ $value->bus_seats }}</td>
           <td>{{ $value->remark }}</td>

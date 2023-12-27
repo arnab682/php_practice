@@ -14,6 +14,8 @@ class Bus extends Model
     protected $hidden = ['created_at', 'updated_at'];
 
     protected $fillable = [
+                            'id',
+                            'brand_name',
                             'bus_number',
                             'bus_seats',
                             'remark',
@@ -21,7 +23,8 @@ class Bus extends Model
                         ];
 
    protected $attributes = array(
-                            'bus_number' => 'S.Alam',
+                            'brand_name' => 'S.Alam',
+                            'bus_number' => 'S2453',
                             'bus_seats' => 36,
                             'remark' => 'Running',
                             'status' => 1,
