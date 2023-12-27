@@ -35,4 +35,15 @@ class Reservation extends Model
                             'created_by' => 1,
                             'updated_by' => 1,
                         );
+
+    
+    public function bus()
+    {
+        return $this->hasOne(Bus::class, 'id', 'bus_id',);
+    }
+
+    public function customer()
+    {
+        return $this->hasOne(Customer::class,  'id', 'customer_id',);
+    }
 }

@@ -40,7 +40,7 @@
               <li class="nav-item">
                 <a
                   class="nav-link menu-link"
-                  href="#sidebarUI"
+                  href="#sidebarUI0"
                   data-bs-toggle="collapse"
                   role="button"
                   aria-expanded="false"
@@ -51,7 +51,7 @@
                 </a>
                 <div
                   class="collapse menu-dropdown mega-dropdown-menu"
-                  id="sidebarUI"
+                  id="sidebarUI0"
                 >
                   <div class="row">
                     <div class="col-lg-4">
@@ -126,28 +126,28 @@
               <li class="nav-item">
                 <a
                   class="nav-link menu-link"
-                  href="#sidebarUI"
+                  href="#sidebarUI2"
                   data-bs-toggle="collapse"
                   role="button"
                   aria-expanded="false"
                   aria-controls="sidebarUI"
                 >
                   <i data-feather="package" class="icon-dual"></i>
-                  <span data-key="t-base-ui">Customers</span>
+                  <span data-key="t-base-ui">Reservation</span>
                 </a>
                 <div
                   class="collapse menu-dropdown mega-dropdown-menu"
-                  id="sidebarUI"
+                  id="sidebarUI2"
                 >
                   <div class="row">
                     <div class="col-lg-4">
                       <ul class="nav nav-sm flex-column">
                         <li class="nav-item">
                           <a
-                            href="{route('customers.index')}}"
+                            href="{{route('reservations.index')}}"
                             class="nav-link"
                             data-key="t-alerts"
-                            >Customer List</a
+                            >Reservation List</a
                           >
                         </li>
                         <!-- <li class="nav-item">
