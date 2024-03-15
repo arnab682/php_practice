@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Silverbricksbd
+   JobFind
 @endsection
 
 
@@ -47,17 +47,18 @@
                 errorToast("Password is required");
             }
             else{
-                try {
-
-                    showLoader();
-                    let res=await axios.post("/login",{email:email, password:password});
-                    hideLoader()
-                    window.location.href="/dashboard";
+                
+                showLoader();
+                let res=await axios.post("/login",{email:email, password:password});
+                hideLoader()
+                if(res.data['status']=='success'){
+                    window.location.href="/dashboard";//console.log(res);
                     successToast(res.data['message']);
-
-                } catch (res) {
+                }else{
                     errorToast(res.data['message']);
                 }
+
+               
                 
             }
     }

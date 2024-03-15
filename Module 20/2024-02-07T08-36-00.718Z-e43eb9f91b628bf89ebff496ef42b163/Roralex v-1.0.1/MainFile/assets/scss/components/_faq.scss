@@ -1,0 +1,114 @@
+/*----------------------------------------*/
+/*  FAQ Section
+/*----------------------------------------*/
+
+/* =============== FAQ Section version one ===============*/
+
+.faq-section-version-one {
+  .left-side {
+    .wrapper {
+      h2 {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--heading_color);
+        text-transform: capitalize;
+      }
+      img {
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--heading_color);
+        text-transform: capitalize;
+      }
+    }
+    .intro {
+      h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--heading_color);
+      }
+    }
+    .accordion {
+      margin-top: 20px;
+      .accordion-item {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+        .accordion-header {
+          .accordion-button {
+            padding-left: 40px;
+            position: relative;
+            color: var(--bg_white);
+            background-color: var(--theme_color);
+            border: 1px solid var(--theme_color);
+            font-weight: 600;
+            &:focus {
+              border: 1px solid var(--theme_color);
+              outline: 0;
+              box-shadow: none;
+            }
+            &::after {
+              content: "\2b";
+              background-image: none;
+              font-family: "Font Awesome 6 Pro";
+              position: absolute;
+              left: 15px;
+              color: var(--bg_white);
+              transition: all 0.2s linear;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+            &:not(.collapsed) {
+              &::after {
+                transition: all 0.2s linear;
+                background-image: none;
+                content: "\f068";
+                color: var(--bg_white);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.rtl {
+    .accordion-button {
+      padding-left: 0;
+      padding-right: 45px;
+      &::after {
+        left: auto;
+        right: 15px;
+      }
+    }
+
+    .widget {
+      .widget-four {
+        .input-inner {
+          .input {
+            span {
+              left: auto;
+              right: 14px;
+            }
+            input {
+              padding-right: 35px;
+              padding-left: 0;
+            }
+          }
+          .text-area {
+            span {
+              left: auto;
+              right: 14px;
+            }
+            .text-end {
+              padding-right: 35px;
+              padding-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+// Common SCSS styles
+
+@import "common/theme";
+@import "common/variable";
+@import "common/mixins";
+@import "common/reset";
+@import "common/animation";
+@import "common/buttons";
+@import "common/universal";
+@import "common/header-intro";
+
+// All Component Elements
+@import "components/header";
+@import "components/footer";
+@import "components/slider";
+@import "components/bread-crumb";
+@import "components/about-section";
+@import "components/serviceList-section";
+@import "components/whyChooseUs";
+@import "components/projectBackgroundOverlay";
+@import "components/ourTeam-section";
+@import "components/team-details";
+@import "components/latest-project";
+@import "components/client-review";
+@import "components/blog-section";
+@import "components/price-section";
+@import "components/newsletter-section";
+@import "components/ourclient-section";
+@import "components/faq";
+@import "components/contact";
+@import "components/widget";
+@import "components/demo";

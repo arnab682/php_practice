@@ -26,8 +26,21 @@
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <div class="nav-item dropdown">
+                        <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">Signup/Login<i class="fa fa-arrow-right ms-3"></i></a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="{{url('/employers/account')}}" class="dropdown-item">
+                                    <b>Employers</b><br>
+                                    <span>Create Account or Sign In</span>
+                                </a><hr>
+                                <a href="{{url('/candidate/account')}}" class="dropdown-item">
+                                    <b>Job Seeker</b><br>
+                                    <span>Create Account or Sign In</span>
+                                </a>
+                            </div>
+                    </div>
                 </div>
-                <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Signup/Login<i class="fa fa-arrow-right ms-3"></i></a>
+                
             </div>
         </nav>
         <!-- Navbar End -->

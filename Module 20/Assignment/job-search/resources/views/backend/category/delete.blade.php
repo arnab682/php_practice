@@ -17,6 +17,10 @@
 </div>
 
 <script>
+    const axiosConfig = {
+        baseURL: '/',
+        timeout: 30000,
+        };
 
      async  function  itemDelete(){
          try {

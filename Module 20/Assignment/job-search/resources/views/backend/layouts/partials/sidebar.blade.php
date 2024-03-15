@@ -15,14 +15,14 @@
         <span class="side-bar-item-caption">Category</span>
     </a>
 
-    <a href="{{url("/productPage")}}" class="side-bar-item">
-        <i class="bi bi-bag"></i>
-        <span class="side-bar-item-caption">Product</span>
+    <a href="{{url('/company')}}" class="side-bar-item">
+        <i class="bi bi-currency-dollar"></i>
+        <span class="side-bar-item-caption">Company</span>
     </a>
 
-    <a href="{{url('/salePage')}}" class="side-bar-item">
-        <i class="bi bi-currency-dollar"></i>
-        <span class="side-bar-item-caption">Create Sale</span>
+    <a href="{{url("/post")}}" class="side-bar-item">
+        <i class="bi bi-bag"></i>
+        <span class="side-bar-item-caption">Post</span>
     </a>
 
     <a href="{{url('/invoicePage')}}" class="side-bar-item">

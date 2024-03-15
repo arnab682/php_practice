@@ -71,13 +71,18 @@
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="front/lib/wow/wow.min.js"></script>
-    <script src="front/lib/easing/easing.min.js"></script>
-    <script src="front/lib/waypoints/waypoints.min.js"></script>
-    <script src="front/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('front/lib/wow/wow.min.js')}}"></script>
+    <script src="{{asset('front/lib/easing/easing.min.js')}}"></script>
+    <script src="{{asset('front/lib/waypoints/waypoints.min.js')}}"></script>
+    <script src="{{asset('front/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Template Javascript -->
-    <script src="front/js/main.js"></script>
+    <script src="{{asset('front/js/main.js')}}"></script>
+
+    <<script src="{{asset('js/toastify-js.js')}}"></script>
+    <script src="{{asset('js/axios.min.js')}}"></script>
+    <script src="{{asset('js/config.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
 </body>
 
 </html>

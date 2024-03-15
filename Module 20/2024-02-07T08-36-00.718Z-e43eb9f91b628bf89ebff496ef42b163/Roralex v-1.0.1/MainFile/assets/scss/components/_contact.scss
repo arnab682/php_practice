@@ -1,0 +1,111 @@
+/*----------------------------------------*/
+/*   Contact Section
+/*----------------------------------------*/
+
+/* ============== Contact version one start ==============*/
+
+.contact-version-one {
+  .contact-inner {
+    .input-field {
+      padding-right: 30px;
+      .field {
+        margin-top: 20px;
+        h4 {
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--heading_color);
+        }
+        p {
+          text-transform: capitalize;
+        }
+        .input-inner {
+          input {
+            width: 100%;
+            height: 55px;
+            border: 1px solid var(--border_color);
+            border-radius: 8px;
+            padding: 10px 15px;
+          }
+          textarea {
+            width: 100%;
+            border: 1px solid var(--border_color);
+            border-radius: 8px;
+            padding: 10px 15px;
+            &:focus-visible {
+              outline: transparent;
+            }
+            .main-btn {
+              margin-top: 10px;
+              .btn-shape-normal-outline {
+                margin: 0;
+                width: 172px;
+              }
+            }
+          }
+          .access {
+            input {
+              &:last-child {
+                @media #{$sm, $xs} {
+                  margin-top: 15px;
+                }
+              }
+            }
+          }
+          .main-btn {
+            margin-top: 20px;
+            .btn-shape-normal-outline {
+              margin: 0;
+              width: 172px;
+            }
+          }
+        }
+      }
+      &.rtl {
+        @media #{$sm, $xs} {
+          padding-right: 0;
+        }
+      }
+    }
+    .right-side {
+      @media #{$md, $sm, $xs} {
+        margin-top: 70px;
+      }
+      .intro {
+        h2 {
+          font-size: 30px;
+          font-weight: 700;
+          text-transform: capitalize;
+          color: var(--heading_color);
+        }
+      }
+      .list-data {
+        ul {
+          margin-top: 20px;
+          li {
+            display: flex;
+            gap: 15px;
+            padding: 8px 0;
+            i {
+              font-size: 46px;
+              color: var(--theme_color);
+            }
+            h4 {
+              font-size: 18px;
+              font-weight: 700;
+              color: var(--heading_color);
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contact-g-map {
+    margin-top: 80px;
+    width: 100%;
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}

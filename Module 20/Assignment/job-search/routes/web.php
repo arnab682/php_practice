@@ -1,6 +1,11 @@
 <?php
 
-use App\Http\Controllers\banckend\CategoryController;
+use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\CompanyController;
+use App\Http\Controllers\backend\ContactController;
+use App\Http\Controllers\backend\BlogController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+Route::get('/employers/account', [FrontendController::class, 'employersAccount']);
+Route::post('/employers/register', [FrontendController::class, 'storeEmployer']);
+
+Route::get('/candidate/account', [FrontendController::class, 'candidateAccount']);
+Route::post('/candidate/create', [FrontendController::class, 'signupCandidateAccount']);
+Route::get('/contact', [FrontendController::class, 'contact']);
 
 
 
@@ -36,7 +48,32 @@ Route::middleware('auth')->group(function () {
     Route::post('category/edit', [CategoryController::class, 'edit']);
     Route::post('category/update', [CategoryController::class, 'update']);
     Route::post('category/delete', [CategoryController::class, 'destroy']);
+
+    Route::get('company', [CompanyController::class, 'index']);
+    Route::get("list-company",[CompanyController::class,'CategoryList']);
+    Route::post('company', [CompanyController::class, 'store']);
+    Route::post('company/edit', [CompanyController::class, 'edit']);
+    Route::post('company/update', [CompanyController::class, 'update']);
+    Route::post('company/delete', [CompanyController::class, 'destroy']);
+
+    Route::get('blog', [BlogController::class, 'index']);
+    Route::get("list-blog",[BlogController::class,'BlogList']);
+    Route::post('blog', [BlogController::class, 'store']);
+    Route::post('blog/edit', [BlogController::class, 'edit']);
+    Route::post('blog/update', [BlogController::class, 'update']);
+    Route::post('blog/delete', [BlogController::class, 'destroy']);
     
+    Route::get('/contact/list', [ContactController::class, 'index']);
+    Route::get("list-contact",[ContactController::class,'ContactList']);
+    Route::post('contact/edit', [ContactController::class, 'edit']);
+    Route::post('contact/update', [ContactController::class, 'update']);
+
+    Route::get('banner', [BannerController::class, 'index']);
+    Route::get("list-banner",[BannerController::class,'BannerList']);
+    Route::post('banner', [BannerController::class, 'store']);
+    Route::post('banner/edit', [BannerController::class, 'edit']);
+    Route::post('banner/update', [BannerController::class, 'update']);
+    Route::post('banner/delete', [BannerController::class, 'destroy']);
 });
 
 require __DIR__.'/auth.php';

@@ -1,0 +1,341 @@
+/*----------------------------------------*/
+/*  16. Our Team Section
+/*----------------------------------------*/
+
+/* ============== Our Team Section version one ==============*/
+
+.ourTeam-section-version-one {
+  @media #{$lg, $md, $sm, $xs} {
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  .inner-card-items-slider {
+    position: relative;
+    margin-top: 30px;
+    .team-version-one {
+      .swiper-wrapper {
+        .swiper-slide {
+          .inner-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 10px;
+            border: 2px solid var(--border_color);
+            .img-file {
+              img {
+                width: 100%;
+              }
+            }
+            @media #{$xs} {
+              margin: 20px 26px;
+            }
+            .intro {
+              padding: 18px 10px;
+              text-align: center;
+
+              .name {
+                margin-top: 0;
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--theme_color);
+                margin-bottom: 0;
+              }
+              .position {
+                margin: 0;
+                margin-top: 5px;
+                font-weight: 600;
+                font-size: 14px;
+                color: var(--heading_color);
+              }
+
+              .social-icon {
+                margin-top: 8px;
+                ul {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10px;
+                  li {
+                    a {
+                      @media #{$xs} {
+                        padding: 3px;
+                        margin-bottom: 10px;
+                      }
+                    }
+                    i {
+                      font-size: 18px;
+                      transition: all 0.2s linear;
+                      @media #{$xs} {
+                        font-size: 26px;
+                      }
+                    }
+                    &:hover .fa-facebook-f {
+                      color: var(--facebook);
+                    }
+                    &:hover .fa-twitter {
+                      color: var(--twitter);
+                    }
+                    &:hover .fa-youtube {
+                      color: var(--youtube);
+                    }
+                    &:hover .fa-linkedin {
+                      color: var(--linkedin);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .team-version-one-pagination {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 38px;
+      .swiper-pagination-bullet-active {
+        background: var(--theme_color);
+      }
+    }
+  }
+}
+
+/* ============== Our Team Section version two ==============*/
+
+.ourTeam-section-version-two {
+  .inner-card-items-slider {
+    position: relative;
+    margin-top: 40px;
+    .team-version-two {
+      .swiper-wrapper {
+        .swiper-slide {
+          .inner-wrapper {
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 15px;
+            .img-file {
+              img {
+                width: 100%;
+              }
+            }
+            @media #{$sm, $xs} {
+              margin: 20px 30px;
+            }
+            .intro {
+              padding: 18px 10px;
+              text-align: center;
+
+              .name {
+                margin-top: 0;
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--theme_color);
+                margin-bottom: 0;
+              }
+              .position {
+                margin: 0;
+                margin-top: 5px;
+                font-weight: 600;
+                font-size: 14px;
+                color: var(--heading_color);
+              }
+
+              .social-icon {
+                margin-top: 8px;
+                ul {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10px;
+                  li {
+                    a {
+                      font-size: 18px;
+                      @media #{$sm, $xs} {
+                        padding: 2px;
+                      }
+                    }
+                    i {
+                      font-size: 18px;
+                      transition: all 0.2s linear;
+                      @media #{$sm, $xs} {
+                        font-size: 26px;
+                      }
+                    }
+                    &:hover .fa-facebook-f {
+                      color: var(--facebook);
+                    }
+                    &:hover .fa-twitter {
+                      color: var(--twitter);
+                    }
+                    &:hover .fa-youtube {
+                      color: var(--youtube);
+                    }
+                    &:hover .fa-linkedin {
+                      color: var(--linkedin);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .team-version-two-pagination {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      z-index: 9;
+      left: 0;
+      bottom: -50px;
+      gap: 12px;
+      & .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 0;
+      }
+      & .swiper-pagination-bullet-active {
+        background: var(--theme_color);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* ============== Our Team Section version three ==============*/
+
+.ourTeam-section-version-three {
+  .inner-card-items-slider {
+    position: relative;
+    margin-top: 40px;
+    .team-version-three {
+      .inner-wrapper {
+        position: relative;
+        border-radius: 8px;
+        margin: 20px 10px;
+        @media #{$xs} {
+          margin: 20px 20px;
+        }
+        .img-file {
+          position: relative;
+          z-index: 9;
+          border-radius: 8px 8px 0 0;
+          overflow: hidden;
+          @media #{$sm, $xs} {
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .intro {
+          position: relative;
+          z-index: 9;
+          padding: 18px 10px;
+          text-align: center;
+          border: 1px solid var(--border_color);
+          border-top: transparent;
+          border-radius: 0 0 8px 8px;
+          padding-bottom: 10px;
+          background: var(--bg_white);
+          transition: all 0.2s linear;
+
+          .name {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--heading_color);
+            margin-bottom: 0;
+          }
+          .position {
+            margin: 0;
+            margin-top: 5px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--theme_color);
+          }
+
+          .social-icon {
+            margin-top: 8px;
+            margin-bottom: 5px;
+            ul {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 10px;
+              li {
+                @media #{$sm, $xs} {
+                  margin-bottom: 6px;
+                }
+                a {
+                  font-size: 18px;
+                  padding: 2px;
+                  color: var(--primary_color);
+                  @media #{$sm,$xs} {
+                    padding: 3px;
+                  }
+                  i {
+                    font-size: 18px;
+                    transition: all 0.2s linear;
+                    @media #{$sm, $xs} {
+                      font-size: 26px;
+                    }
+                  }
+                  &:hover {
+                    color: var(--theme_color);
+                  }
+                }
+              }
+            }
+          }
+        }
+        .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          bottom: 0;
+          background: var(--theme_color);
+          z-index: 0;
+          border-radius: 8px;
+          transition: all 0.2s linear;
+          visibility: hidden;
+          opacity: 0;
+          padding: 0;
+        }
+        &:hover {
+          .intro {
+            border: 1px solid var(--theme_color);
+            border-top: transparent;
+          }
+          .overlay {
+            bottom: -7px;
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+      &.noSlider {
+        .inner-wrapper {
+          margin: 20px 5px;
+        }
+      }
+    }
+  }
+}
+
+.team-version-three-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 9;
+  gap: 12px;
+  & .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 0;
+  }
+  & .swiper-pagination-bullet-active {
+    background: var(--theme_color);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,490 @@
+/*----------------------------------------*/
+/*  15. Project Background Overlay Section
+/*----------------------------------------*/
+
+/* ============= Project Background Overlay Section version one =============*/
+
+.projectBackgroundOverlay {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 80px;
+  padding-bottom: 180px;
+  position: relative;
+  height: 450px;
+  z-index: 0;
+
+  @media #{$md, $sm, $xs} {
+    height: 445px;
+  }
+  @media #{$sm, $xs, $xxs} {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(51 51 51 / 75%);
+    z-index: -1;
+  }
+
+  .wrapper {
+    position: relative;
+    @media #{$xs} {
+      display: flex;
+      align-items: center;
+    }
+    .main-text {
+      padding-left: 100px;
+
+      @media #{ $sm, $xs} {
+        padding-left: 50px;
+      }
+      @media #{ $xxs} {
+        padding-left: 0;
+      }
+      &.rtl {
+        padding-left: 0;
+        padding-right: 100px;
+        @media #{ $sm, $xs} {
+          padding-right: 50px;
+        }
+        @media #{ $xxs} {
+          padding-right: 0;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--bg_white);
+      }
+      h2 {
+        margin-top: 15px;
+        font-size: 55px;
+        font-weight: 700;
+        color: var(--bg_white);
+        letter-spacing: 5px;
+        @media #{ $sm, $xs} {
+          font-size: 26px;
+        }
+        @media #{$xxs} {
+          font-size: 24px;
+        }
+      }
+      p {
+        padding-right: 100px;
+        color: var(--bg_white);
+
+        @media #{ $sm, $xs} {
+          padding-right: 0;
+        }
+        &.rtl {
+          padding-right: 0;
+          padding-left: 100px;
+          @media #{ $sm, $xs} {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    .shape-text {
+      position: absolute;
+      left: -25px;
+      top: 40%;
+      transform: rotate(-90deg);
+      @media #{ $sm, $xs} {
+        left: -70px;
+      }
+      @media #{$xxs} {
+        display: none;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--theme_color);
+      }
+      &.rtl {
+        left: auto;
+        right: -25px;
+        transform: rotate(90deg);
+        @media #{ $sm, $xs} {
+          left: auto;
+          right: -70px;
+        }
+        @media #{$xxs} {
+          display: none;
+        }
+      }
+    }
+  }
+  .box-text {
+    position: absolute;
+    bottom: -126px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+
+    @media #{$lg,$md, $sm, $xs} {
+      display: none;
+    }
+
+    .wrapper-left {
+      background: var(--primary_color);
+      padding: 30px 25px;
+      width: 380px;
+    }
+    .wrapper-middle {
+      position: relative;
+      background: var(--theme_color);
+      padding: 30px 25px;
+      width: 380px;
+      &::after {
+        position: absolute;
+        content: "";
+        background: var(--primary_color);
+        width: 30px;
+        height: 30px;
+        left: -18px;
+        top: 50%;
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        transform: rotate(90deg) translateY(-50%);
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        background: var(--primary_color);
+        width: 30px;
+        height: 30px;
+        right: -18px;
+        top: 50%;
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        transform: rotate(-90deg) translateY(-50%);
+      }
+    }
+    .wrapper-right {
+      background: var(--primary_color);
+      padding: 30px 25px;
+      width: 380px;
+    }
+    h2 {
+      font-size: 30px;
+      color: var(--bg_white);
+      text-align: center;
+      font-weight: 700;
+      margin-top: 12px;
+    }
+    .icon-file {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+    p {
+      color: var(--bg_white);
+      text-align: center;
+    }
+  }
+}
+
+/* ============= Project Background Overlay Section version two =============*/
+.projectBackgroundOverlay-version-two {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0;
+  position: relative;
+
+  z-index: 0;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(51 51 51 / 75%);
+    z-index: -1;
+  }
+  .wrapper {
+    h3 {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 26px;
+      color: var(--theme_color);
+    }
+    h2 {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 55px;
+      font-weight: 700;
+      color: var(--bg_white);
+      text-transform: uppercase;
+      @media #{$sm, $xs} {
+        font-size: 30px;
+      }
+    }
+    p {
+      margin-top: 15px;
+      text-align: center;
+      padding: 0 150px;
+      font-size: 16px;
+      color: var(--bg_white);
+      @media #{$md, $sm, $xs} {
+        padding: 0;
+      }
+    }
+    .btn-section {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      .btn-shape-normal-outline {
+        width: 148px;
+      }
+    }
+  }
+}
+
+/* ============= Project Background Overlay Section version three =============*/
+
+.projectBackgroundOverlay-version-three {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 170px;
+  position: relative;
+  z-index: 0;
+  @media #{$md, $sm, $xs} {
+    padding: 0;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(51 51 51 / 75%);
+    z-index: -1;
+  }
+  .wrapper {
+    // position: relative;
+    h2 {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 55px;
+      font-weight: 700;
+      color: var(--bg_white);
+      text-transform: capitalize;
+      @media #{$md, $sm, $xs} {
+        margin-top: 60px;
+        font-size: 46px;
+      }
+      @media #{$xs} {
+        font-size: 32px;
+      }
+      @media #{$xxs} {
+        font-size: 26px;
+      }
+    }
+    .btn-section {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      @media #{$md, $sm, $xs} {
+        padding-bottom: 60px;
+      }
+      .btn-shape-normal-outline {
+        width: 170px;
+      }
+    }
+    .hip-slider {
+      position: absolute;
+      bottom: -118px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: 250px;
+      background: var(--primary_color);
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      @media #{$md, $sm, $xs} {
+        display: none;
+      }
+      .text {
+        h2 {
+          text-align: start;
+          font-size: 36px;
+          font-weight: 700;
+        }
+      }
+      .list {
+        margin-top: 10px;
+        ul {
+          li {
+            text-transform: capitalize;
+            padding: 2px 0;
+            font-weight: 500;
+            color: var(--bg_white);
+            font-size: 15px;
+            i {
+              margin-right: 10px;
+              color: var(--theme_color);
+            }
+          }
+        }
+      }
+      .hip-slider-pagination {
+        margin-top: 16px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        & .swiper-pagination-bullet {
+          width: 10px;
+          height: 10px;
+          border-radius: 0;
+        }
+        & .swiper-pagination-bullet-active {
+          background: var(--theme_color);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/* ============= Project Background Overlay Section version Four =============*/
+
+.projectBackgroundOverlay-version-four {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0;
+  position: relative;
+  z-index: 0;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(51 51 51 / 75%);
+    z-index: -1;
+  }
+
+  .wrapper {
+    position: relative;
+    .main-text {
+      padding-left: 100px;
+      @media #{$md,$sm,$xs} {
+        padding-left: 0;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--bg_white);
+        @media #{$xs} {
+          font-size: 30px;
+        }
+      }
+      p {
+        padding-right: 100px;
+        color: var(--bg_white);
+      }
+    }
+
+    .box-text {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      @media #{$lg, $md,$sm,$xs} {
+        display: none;
+      }
+      .wrapper-left {
+        background: var(--bg_white);
+        padding: 30px 25px;
+        width: 380px;
+        h2 {
+          color: var(--heading_color);
+        }
+        p {
+          color: var(--text_color);
+        }
+      }
+      .wrapper-middle {
+        position: relative;
+        background: var(--theme_color);
+        padding: 30px 25px;
+        width: 380px;
+        &::after {
+          position: absolute;
+          content: "";
+          background: var(--bg_white);
+          width: 30px;
+          height: 30px;
+          left: -18px;
+          top: 50%;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          transform: rotate(90deg) translateY(-50%);
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          background: var(--bg_white);
+          width: 30px;
+          height: 30px;
+          right: -18px;
+          top: 50%;
+          -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          transform: rotate(-90deg) translateY(-50%);
+        }
+      }
+      .wrapper-right {
+        background: var(--bg_white);
+        padding: 30px 25px;
+        width: 380px;
+        h2 {
+          color: var(--heading_color);
+        }
+        p {
+          color: var(--text_color);
+        }
+      }
+      h2 {
+        font-size: 30px;
+        color: var(--bg_white);
+        text-align: center;
+        font-weight: 700;
+        margin-top: 12px;
+      }
+      .icon-file {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+        img {
+          width: 50px;
+        }
+      }
+      p {
+        color: var(--bg_white);
+        text-align: center;
+      }
+    }
+  }
+}

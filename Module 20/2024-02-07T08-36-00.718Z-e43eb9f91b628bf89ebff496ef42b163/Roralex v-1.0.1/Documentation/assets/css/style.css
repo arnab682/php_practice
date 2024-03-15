@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 8px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  color: #6b7280;
+  line-height: 26px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #1e293b;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.main-section {
+  display: flex;
+}
+.main-section .left__side {
+  width: 250px;
+  background: #333;
+  height: 100vh;
+  position: fixed;
+}
+.main-section .left__side .inner__menu {
+}
+.main-section .left__side .inner__menu .logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+}
+.main-section .left__side .inner__menu .menu {
+  margin-top: 20px;
+  height: calc(100vh - 190px);
+  overflow-y: auto;
+}
+.main-section .left__side .inner__menu .menu ul li a {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  display: block;
+}
+.main-section .left__side .inner__menu .menu ul li.active a {
+  background: #de2021;
+}
+.main-section .left__side .inner__menu .menu ul li:hover a {
+  background: #de2021;
+}
+
+.main-section .left__side .inner__menu .copy__write {
+  position: fixed;
+  bottom: 10px;
+  margin-left: 25px;
+}
+
+/* Right Side */
+.main-section .right__side {
+  padding-left: 250px;
+  background: #fafaf6;
+  min-height: 100vh;
+  width: 100%;
+}
+.main-section .right__side .inner {
+  padding: 0 50px;
+}
+.main-section .right__side .inner .top_header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+.main-section .right__side .inner .top_header h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.main-section .right__side .inner .intro {
+  margin-top: 30px;
+}
+.main-section .right__side .inner .intro ul li {
+  padding: 2px 0;
+}
+.main-section .right__side .child_inner {
+  padding: 0 50px;
+}
+.main-section .right__side .child_inner .inner_card {
+  padding: 20px 25px;
+  background: #fff;
+  border-radius: 10px;
+}
+.main-section .right__side .child_inner .inner_card .heading {
+  margin-bottom: 10px;
+}
+.main-section .right__side .child_inner .inner_card .heading h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+.main-section .right__side img {
+  max-width: 100%;
+  height: auto;
+}
+.main-section .right__side .text_file ul {
+  padding-left: 15px;
+}
+.main-section .right__side .text_file ul li {
+  padding-bottom: 8px;
+}
+.main-section .right__side .text_file ul li:last-child {
+  padding-bottom: 0px;
+}
+.main-section .right__side .text_file ul li a {
+  color: #6b7280;
+  transition: all 0.2s linear;
+  font-size: 16px;
+  font-weight: 600;
+}
+.main-section .right__side .text_file ul li a:hover {
+  color: #de2021;
+}

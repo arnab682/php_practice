@@ -1,0 +1,284 @@
+/*----------------------------------------*/
+/*  21. Our Plan Price START
+/*----------------------------------------*/
+
+/* =========== Our Plan Price  version one Start ===========*/
+
+.price-section-version-one {
+  @media #{$sm, $xs} {
+    padding-bottom: 60px;
+  }
+  .price-card-version-one {
+    .row {
+      --bs-gutter-x: 40px !important;
+      margin-top: 60px;
+      .wrapper {
+        position: relative;
+        z-index: 9;
+        transition: all 0.2s linear;
+        @media #{$md, $sm, $xs} {
+          margin-top: 0;
+          margin-bottom: 40px;
+        }
+        @media #{$sm, $xs} {
+          margin: 0 10px;
+          margin-bottom: 40px;
+        }
+        .inner {
+          background: var(--bg_white);
+          border-radius: 10px;
+          padding: 30px 30px;
+          border-bottom: 8px solid transparent;
+        }
+        .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          border-radius: 12px;
+          background: var(--theme_color);
+          z-index: -1;
+          transition: all 0.2s linear;
+        }
+        .heading-intro {
+          text-align: center;
+          margin: 20px 0;
+          h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--text_color);
+          }
+          h1 {
+            margin-top: 15px;
+            font-size: 46px;
+            font-weight: 700;
+            color: var(--heading_color);
+            span {
+              font-size: 22px;
+              color: var(--theme_color);
+            }
+          }
+        }
+        .inner-list {
+          ul {
+            li {
+              padding: 5px 0;
+              i {
+                font-size: 10px;
+              }
+            }
+          }
+          .btn-section {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            .btn-shape-normal-outline {
+              padding: 10px;
+              width: 126px;
+            }
+          }
+        }
+        &:hover {
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+          .overlay {
+            top: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========== Our Plan Price  version two Start ===========*/
+
+.price-section-version-two {
+  .price-card-version-two {
+    .wrapper {
+      margin-top: 70px;
+      background: var(--bg_white);
+      padding: 30px 30px;
+      border-radius: 8px;
+      .inner {
+        .heading-intro {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .left {
+            margin-top: 20px;
+            h2 {
+              font-size: 16px;
+              font-weight: 700;
+            }
+            h3 {
+              font-weight: 22px;
+              font-weight: 700;
+              color: var(--heading_color);
+            }
+            p {
+              font-size: 15px;
+              margin-bottom: 5px;
+            }
+          }
+          .right {
+            h1 {
+              font-size: 48px;
+              font-weight: 700;
+              color: var(--theme_color);
+            }
+          }
+        }
+        .inner-list {
+          margin-top: 10px;
+          ul {
+            li {
+              padding: 7px 0;
+              i {
+                margin-right: 6px;
+              }
+              .fa-check {
+                color: #22c55e;
+              }
+              .fa-xmark {
+                color: #dc2626;
+              }
+            }
+          }
+          .btn-section {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            .btn-shape-normal-outline {
+              width: 200px;
+              padding: 14px;
+            }
+          }
+        }
+      }
+      &.theme {
+        margin-top: 40px;
+        background: var(--primary_color);
+        @media #{$md,$sm, $xs} {
+          margin-top: 70px;
+        }
+        .inner {
+          .heading-intro {
+            .left {
+              h2 {
+                color: var(--bg_white);
+              }
+              h3 {
+                color: var(--bg_white);
+              }
+              p {
+                color: var(--bg_white);
+              }
+            }
+          }
+          .inner-list {
+            margin-top: 10px;
+            ul {
+              li {
+                color: var(--bg_white);
+              }
+            }
+            .btn-section {
+              display: flex;
+              justify-content: center;
+              margin-bottom: 10px;
+              margin-top: 20px;
+              .btn-shape-normal-outline {
+                width: 200px;
+                padding: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =========== Our Plan Price  version three Start ===========*/
+
+.price-section-version-three {
+  @media #{$xs} {
+    padding-bottom: 20px;
+  }
+  .price-card-version-three {
+    margin-top: 60px;
+    .wrapper {
+      border-radius: 8px;
+      overflow: hidden;
+      @media #{$md} {
+        margin-bottom: 40px;
+      }
+      @media #{$sm, $xs} {
+        margin: 0 10px;
+        margin-bottom: 70px;
+      }
+      .inner {
+        background: var(--bg_white);
+        padding: 20px 30px;
+      }
+      .icon-file {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .heading-intro {
+        text-align: center;
+        h2 {
+          font-size: 36px;
+          font-weight: 700;
+          color: var(--heading_color);
+        }
+        h3 {
+          font-size: 22px;
+          font-weight: 600;
+          color: var(--theme_color);
+          span {
+            font-size: 15px;
+          }
+        }
+      }
+      .inner-list {
+        margin-top: 15px;
+        text-align: center;
+        ul {
+          li {
+            padding: 5px 0;
+            i {
+              font-size: 16px;
+              margin-right: 5px;
+              &.fa-check {
+                color: #22c55e;
+              }
+              &.fa-xmark {
+                color: #dc2626;
+              }
+            }
+          }
+        }
+        .btn-section {
+          margin-top: 25px;
+          margin-bottom: 10px;
+          display: flex;
+          justify-content: center;
+          .btn-shape-normal-outline {
+            padding: 10px;
+            width: 126px;
+            @media #{$sm, $xs} {
+              padding: 16px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+      &:hover {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+    }
+  }
+}

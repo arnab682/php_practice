@@ -1,0 +1,315 @@
+/*----------------------------------------*/
+/*  19. Client Review Section
+/*----------------------------------------*/
+
+/* ============== Client Review Section version one ==============*/
+
+.client-review-version-one {
+  @media #{$xs} {
+    padding-bottom: 30px;
+  }
+  .slider-client-review {
+    margin-top: 40px;
+    .review-version-one {
+      padding: 60px 0 30px 0;
+      .swiper-wrapper {
+        .swiper-slide {
+          .inner-wrapper {
+            position: relative;
+            border-radius: 10px;
+            padding: 25px 20px;
+            background: var(--bg_white);
+            @media #{$xs} {
+              margin: 0 30px;
+            }
+            .img-file {
+              border-radius: 50%;
+              overflow: hidden;
+              border: 6px solid #fff;
+              position: absolute;
+              top: -60px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+            .quta-img {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin-top: 35px;
+            }
+            .review-star {
+              display: flex;
+              justify-content: center;
+              gap: 3px;
+              i {
+                color: #f7941d;
+              }
+            }
+            .text-file {
+              text-align: center;
+              margin-top: 16px;
+              h2 {
+                font-size: 22px;
+                color: var(--theme_color);
+                font-weight: 700;
+                margin-bottom: 8px;
+                text-transform: capitalize;
+              }
+              h4 {
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--heading_color);
+                text-transform: capitalize;
+              }
+              p {
+                margin-top: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .review-version-one-pagination {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+      .swiper-pagination-bullet-active {
+        background: var(--theme_color);
+      }
+    }
+  }
+}
+
+/* ============== Client Review Section version two ==============*/
+
+.client-review-version-two {
+  .slider-client-review {
+    margin-top: 40px;
+    position: relative;
+    .review-version-two {
+      padding-top: 65px;
+      padding-bottom: 30px;
+      .swiper-wrapper {
+        .swiper-slide {
+          .inner-wrapper {
+            margin: 0 20px;
+            position: relative;
+            border-radius: 10px;
+            padding: 25px 25px;
+            background: var(--bg_white);
+            .img-file {
+              border-radius: 50%;
+              overflow: hidden;
+              border: 6px solid #fff;
+              position: absolute;
+              top: -60px;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+            .quta-img {
+              margin-top: 40px;
+              &.rtl {
+                img {
+                  transform: scaleX(-1);
+                }
+              }
+            }
+            .text {
+              margin-top: 15px;
+              p {
+                font-size: 16px;
+              }
+            }
+            .name-pos {
+              margin-top: 10px;
+              h2 {
+                font-size: 26px;
+                font-weight: 700;
+                color: var(--heading_color);
+                margin-bottom: 0;
+              }
+              h4 {
+                margin-top: 5px;
+                font-weight: 600;
+                font-size: 18px;
+                color: var(--theme_color);
+              }
+            }
+          }
+        }
+      }
+    }
+    .review-version-two-pagination {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      z-index: 9;
+      left: 0;
+      bottom: -40px;
+      gap: 12px;
+      & .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border-radius: 0;
+      }
+      & .swiper-pagination-bullet-active {
+        background: var(--theme_color);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* ============== Client Review Section version three ==============*/
+
+.client-review-version-three {
+  @media #{$sm, $xs} {
+    padding-bottom: 0;
+  }
+  .left-side {
+    margin-top: 30px;
+    .review-filter {
+      .have-inner {
+        @media #{$xs} {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .no-inner {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      .inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 22px;
+      }
+      .inner-two {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 22px;
+      }
+      .img-file {
+        display: block;
+        position: relative;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 9;
+        span {
+          position: relative;
+          z-index: 9;
+        }
+        &::after {
+          position: absolute;
+          left: -4px;
+          top: -4px;
+          background: var(--theme_color);
+          width: 0;
+          height: 0;
+          content: "";
+          border-radius: 5px 0 0 0;
+          z-index: 0;
+          transition: all 0.3s linear;
+          visibility: hidden;
+          opacity: 0;
+        }
+        &::before {
+          position: absolute;
+          right: -4px;
+          bottom: -4px;
+          background: var(--theme_color);
+          width: 0;
+          height: 0;
+          content: "";
+          border-radius: 0 0 5px 0;
+          z-index: 0;
+          transition: all 0.3s linear;
+          visibility: hidden;
+          opacity: 0;
+        }
+        &.active,
+        &:hover {
+          &::after {
+            visibility: visible;
+            opacity: 1;
+            width: 50px;
+            height: 50px;
+            @media #{$md} {
+              width: 30px;
+              height: 30px;
+            }
+          }
+          &::before {
+            visibility: visible;
+            opacity: 1;
+            width: 50px;
+            height: 50px;
+            @media #{$md} {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right-side {
+    margin-top: 30px;
+    padding-left: 50px;
+    @media #{$md} {
+      padding-left: 30px;
+    }
+    @media #{$xs} {
+      padding-left: 10px;
+    }
+    .intro-section {
+      margin-top: 20px;
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      h2 {
+        margin-top: 15px;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--heading_color);
+      }
+    }
+    .review-version-three {
+      margin-top: 10px;
+      .icon-file {
+        i {
+          font-size: 60px;
+          color: var(--border_color);
+        }
+        &.rtl {
+          i {
+            transform: scaleX(-1);
+          }
+        }
+      }
+      .text-file {
+        margin-top: 10px;
+      }
+      .button-intro {
+        margin-top: 10px;
+        h3 {
+          font-size: 26px;
+          font-weight: 700;
+          color: var(--theme_color);
+          margin: 0;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

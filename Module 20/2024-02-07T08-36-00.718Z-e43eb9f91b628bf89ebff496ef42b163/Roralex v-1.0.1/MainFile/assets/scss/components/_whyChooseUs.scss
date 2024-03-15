@@ -1,0 +1,409 @@
+/*----------------------------------------*/
+/*  14. Why Choose Us Section
+/*----------------------------------------*/
+
+/* =============== Why Choose Us Section version one start ===============*/
+
+.whyChooseUs-section-version-one {
+  .inner-card-items {
+    margin-top: 40px;
+    .wrapper {
+      background: var(--bg_white);
+      padding: 30px 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+      transition: all 0.3s linear;
+      cursor: pointer;
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 20px;
+        color: var(--heading_color);
+        text-transform: uppercase;
+      }
+      .icon-file {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      p {
+        margin-top: 20px;
+        text-align: center;
+      }
+      &:hover {
+        background: var(--primary_color);
+
+        h2 {
+          color: var(--bg_white);
+        }
+        p {
+          color: var(--bg_white);
+        }
+      }
+    }
+  }
+}
+
+/* =============== Why Choose Us Section version two start ===============*/
+
+.whyChooseUs-section-version-two {
+  .inner-card-items {
+    margin-top: 50px;
+    .wrapper {
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 9;
+      cursor: pointer;
+      @media #{$sm, $xs} {
+        margin: 0 20px;
+        margin-bottom: 35px;
+      }
+      .inner {
+        padding: 20px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border_color);
+        position: relative;
+        z-index: 9;
+        background: var(--bg_white);
+        h2 {
+          text-align: center;
+          margin-top: 20px;
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--heading_color);
+          text-transform: uppercase;
+        }
+        .icon-file {
+          margin-top: 15px;
+          display: flex;
+          justify-content: center;
+        }
+        p {
+          text-align: center;
+          font-size: 15px;
+          margin-top: 15px;
+        }
+      }
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: var(--theme_color);
+        border-radius: 10px;
+        z-index: 1;
+        transition: all 0.2s linear;
+      }
+      &:hover {
+        .overlay {
+          left: -7px;
+          top: -7px;
+        }
+      }
+    }
+  }
+}
+
+/* =============== Why Choose Us Section version three start ===============*/
+
+.whyChooseUs-section-version-three {
+  .inner-card-items {
+    margin-top: 50px;
+    .wrapper {
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 9;
+      cursor: pointer;
+      @media #{$xs} {
+        margin: 0 20px;
+        margin-bottom: 35px;
+      }
+      .inner {
+        padding: 20px 26px;
+        border-radius: 8px;
+        border: 1px solid var(--border_color);
+        position: relative;
+        z-index: 9;
+        background: var(--bg_white);
+        transition: all 0.3s linear;
+        h2 {
+          margin-top: 22px;
+          font-size: 26px;
+          font-weight: 700;
+          color: var(--heading_color);
+          text-transform: capitalize;
+          position: relative;
+          z-index: 1;
+        }
+        .icon-file {
+          margin-top: 15px;
+          display: flex;
+          justify-content: center;
+        }
+        p {
+          font-size: 16px;
+          margin-top: 15px;
+        }
+        .overlay-text {
+          position: absolute;
+          left: 18px;
+          top: 60px;
+          z-index: 0;
+          h2 {
+            font-size: 80px;
+            color: var(--border_color);
+          }
+          &.rtl {
+            left: auto;
+            right: 18px;
+          }
+        }
+        &:hover {
+          background: var(--primary_color);
+          h2,
+          p {
+            color: var(--bg_white);
+          }
+          .overlay-text {
+            h2 {
+              color: var(--border_color);
+              opacity: 0.1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* =============== Why Choose Us Section version Fpur start ===============*/
+
+.whyChooseUs-section-version-four {
+  .inner-card-items {
+    margin-top: 40px;
+    .left-side {
+      .tabs-inner {
+        .tabs {
+          border: 1px solid var(--border_color);
+          display: inline-block;
+          @media #{$xs} {
+            display: none;
+          }
+          li {
+            position: relative;
+            a {
+              font-size: 16px;
+              font-weight: 700;
+              color: var(--heading_color);
+              transition: all 0.2s linear;
+            }
+            &::after {
+              position: absolute;
+              content: "";
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 0;
+              background: var(--theme_color);
+              transition: all 0.2s ease;
+            }
+            &::before {
+              position: absolute;
+              content: "";
+              left: 0;
+              bottom: 0;
+              width: 20px;
+              height: 0;
+              -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+              clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+              background: var(--theme_color);
+              left: 50%;
+              transform: translateX(-50%);
+              transition: all 0.2s ease;
+            }
+            &.active {
+              a {
+                color: var(--theme_color);
+              }
+              &::after {
+                height: 5px;
+              }
+              &::before {
+                height: 16px;
+              }
+            }
+          }
+        }
+        .tab_content_wrapper {
+          border: 1px solid var(--border_color);
+          border-radius: 8px;
+          margin-top: 15px;
+          .tab_content {
+            .wrapper {
+              display: flex;
+              gap: 20px;
+              @media #{$xs} {
+                display: block;
+              }
+              .left {
+                @media #{$xs} {
+                  padding-left: 10px;
+                }
+                .img-file {
+                  img {
+                    border-radius: 8px;
+                    overflow: hidden;
+                    @media #{$xs} {
+                      display: none;
+                    }
+                  }
+                }
+              }
+              .right {
+                @media #{$xs} {
+                  padding-left: 10px;
+                }
+                h2 {
+                  margin-top: 10px;
+                  font-size: 20px;
+                  font-weight: 700;
+                  color: var(--heading_color);
+                  text-transform: capitalize;
+                }
+                ul {
+                  margin-top: 10px;
+                  li {
+                    padding: 3px 0;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    i {
+                      color: var(--theme_color);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .accordion_tabs {
+          padding-left: 20px;
+          color: var(--heading_color);
+          font-size: 16px;
+          &.active {
+            background: var(--theme_color);
+            color: var(--bg_white);
+          }
+        }
+      }
+      &.rtl {
+        @media #{ $sm, $xs} {
+          margin-top: 30px;
+        }
+        .tabs-inner {
+          text-align: end;
+        }
+        .tab_content_wrapper {
+          display: flex;
+          justify-content: end;
+          height: 220px !important;
+          @media #{ $sm, $xs} {
+            display: block;
+            height: 100% !important;
+          }
+        }
+      }
+    }
+    .right-side {
+      padding-left: 40px;
+      @media #{$lg,$md, $sm, $xs} {
+        padding-left: 0;
+        margin-top: 80px;
+      }
+      .intro {
+        position: relative;
+
+        h2 {
+          font-size: 30px;
+          font-weight: 700;
+          color: var(--heading_color);
+          text-transform: capitalize;
+          line-height: 38px;
+          padding-left: 32px;
+          @media #{$lg,$md, $sm, $xs} {
+            padding-right: 450px;
+          }
+          @media #{$md, $sm, $xs} {
+            padding-right: 250px;
+          }
+          @media #{ $sm} {
+            padding-right: 0;
+            font-size: 30px;
+            line-height: 40px;
+          }
+          @media #{ $xs} {
+            padding-right: 0;
+          }
+          @media #{ $xs} {
+            padding-right: 0;
+            font-size: 26px;
+            line-height: 36px;
+          }
+        }
+        h3 {
+          position: absolute;
+          transform: rotate(-90deg);
+          left: -43px;
+          bottom: 33px;
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--theme_color);
+          @media #{$xs} {
+            bottom: 42px;
+          }
+          @media #{$xxs} {
+            bottom: 42px;
+          }
+          &.rtl {
+            left: auto;
+            right: -43px;
+          }
+        }
+      }
+      ul {
+        @media #{$lg,$md, $sm, $xs} {
+          margin-top: 40px;
+        }
+        li {
+          display: flex;
+          gap: 15px;
+          align-items: center;
+          padding: 15px 0;
+          border-bottom: 1px solid var(--border_color);
+          img {
+            width: 60px;
+          }
+          span {
+            display: block;
+            &:first-child {
+              font-size: 16px;
+            }
+            &:last-child {
+              font-size: 20px;
+              font-weight: 700;
+              color: var(--heading_color);
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      &.rtl {
+        padding-left: 0;
+        padding-right: 40px;
+      }
+    }
+  }
+}

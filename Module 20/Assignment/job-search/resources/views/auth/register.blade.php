@@ -61,7 +61,6 @@
         "password_confirmation":document.getElementById('password_confirmation').value,
     }
 
-    try {
 
         showLoader();
         let res=await axios.post("/register",postBody);
@@ -77,9 +76,6 @@
             errorToast(res.data['message'])
         }
 
-        }catch (e) {
-            errorToast(res.data['message'])
-        }
 
   }
 

@@ -1,0 +1,113 @@
+/*----------------------------------------*/
+/*  07.  Header Intro
+/*----------------------------------------*/
+
+/* ================ Header Intro Version One version One ================*/
+
+.header-intro-version-one {
+  .wrapper {
+    .pop-text {
+      position: relative;
+      h3 {
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--primary_color);
+        z-index: 1;
+        text-transform: capitalize;
+      }
+      .shape-img {
+        position: absolute;
+        top: -8px;
+        left: -27px;
+        z-index: 0;
+        &.rtl {
+          left: auto;
+          right: -27px;
+        }
+      }
+    }
+    .inner-text {
+      h2 {
+        padding-right: 130px;
+        margin-top: 15px;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--heading_color);
+        text-transform: capitalize;
+        &.rtl {
+          padding-right: 0;
+          padding-left: 130px;
+        }
+        @media #{$sm, $xs} {
+          padding-right: 50px;
+          font-size: 32px;
+        }
+      }
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+/* ================ Header Intro Version One version Two ================*/
+.header-intro-version-two {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    .pop-text {
+      text-align: center;
+      h3 {
+        font-size: 18px;
+        color: var(--theme_color);
+        font-weight: normal;
+      }
+      h2 {
+        margin-top: 15px;
+        font-weight: 30;
+        font-weight: 700;
+        color: var(--heading_color);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/* ================ Header Intro Version One version Three ================*/
+.header-intro-version-three {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    .pop-text {
+      text-align: center;
+      h3 {
+        position: relative;
+        padding-left: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        display: inline;
+        text-transform: uppercase;
+        &::after {
+          position: absolute;
+          content: "";
+          left: 0;
+          bottom: 6px;
+          width: 45px;
+          height: 3px;
+          border-radius: 5px;
+          background: var(--theme_color);
+        }
+      }
+      h2 {
+        margin-top: 10px;
+        font-weight: 30;
+        font-weight: 700;
+        color: var(--heading_color);
+        text-transform: capitalize;
+        @media #{$xs} {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}

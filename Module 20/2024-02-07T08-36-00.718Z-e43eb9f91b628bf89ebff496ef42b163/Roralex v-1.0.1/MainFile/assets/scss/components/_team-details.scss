@@ -1,0 +1,206 @@
+/*----------------------------------------*/
+/* 17. Team Details Section
+/*----------------------------------------*/
+
+/* ============== Team Details Section version One start ==============*/
+
+.single-team-details-version-one {
+  margin-top: 80px;
+  .person-details {
+    .left-side {
+      .img-file {
+        @media #{$md, $sm, $xs} {
+          display: flex;
+          justify-content: center;
+        }
+        img {
+          border-radius: 8px;
+          overflow: hidden;
+        }
+      }
+    }
+    .right-side {
+      padding-left: 30px;
+      @media #{$md, $sm, $xs} {
+        padding-left: 0;
+        margin-top: 60px;
+      }
+      .wrapper {
+        .name {
+          h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--heading_color);
+            margin: 0;
+          }
+          p {
+            font-size: 20px;
+            margin: 0;
+            margin-top: 5px;
+          }
+        }
+        .data {
+          margin-top: 20px;
+          ul {
+            li {
+              padding: 4px 0;
+              span {
+                &:first-child {
+                  font-weight: 700;
+                  color: var(--heading_color);
+                }
+              }
+            }
+          }
+        }
+        .review {
+          margin-top: 20px;
+          display: flex;
+          align-items: start;
+          gap: 20px;
+          justify-content: space-between;
+          span {
+            i {
+              font-size: 50px;
+              color: var(--border_color);
+            }
+          }
+        }
+        .btn-shape-normal-outline {
+          width: 156px;
+          margin: 0;
+          margin-top: 20px;
+        }
+      }
+      &.rtl {
+        padding-left: 0;
+        padding-right: 30px;
+        @media #{$md, $sm, $xs} {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  .history-skill {
+    .wrapper {
+      padding-top: 50px;
+      hr {
+        color: var(--border_color);
+      }
+      h2 {
+        margin-top: 40px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--heading_color);
+      }
+      p {
+        margin-top: 20px;
+        padding: 0 60px;
+        text-align: center;
+        @media #{$md, $sm, $xs} {
+          padding: 0;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+  .activities {
+    padding-top: 50px;
+    .left-side {
+      padding-right: 20px;
+      .wrapper {
+        .heading-text {
+          h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--heading_color);
+          }
+        }
+        .accordion {
+          margin-top: 20px;
+          .accordion-item {
+            margin-bottom: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            .accordion-header {
+              .accordion-button {
+                padding-left: 40px;
+                position: relative;
+                color: var(--bg_white);
+                background-color: var(--theme_color);
+                border: 1px solid var(--theme_color);
+                &:focus {
+                  border: 1px solid var(--theme_color);
+                  outline: 0;
+                  box-shadow: none;
+                }
+                &::after {
+                  content: "\f101";
+                  background-image: none;
+                  font-family: "Font Awesome 6 Pro";
+                  position: absolute;
+                  left: 15px;
+                  color: var(--bg_white);
+                  transition: all 0.2s linear;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+                &:not(.collapsed) {
+                  &::after {
+                    transition: all 0.2s linear;
+                    background-image: none;
+                    content: "\f103";
+                    color: var(--bg_white);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .right-side {
+      @media #{$md, $sm, $xs} {
+        margin-top: 60px;
+      }
+      .heading-text {
+        h2 {
+          font-size: 22px;
+          font-weight: 700;
+          color: var(--heading_color);
+        }
+        p {
+          margin-top: 20px;
+        }
+      }
+      .skill-bar {
+        margin-top: 30px;
+        .skill-list {
+          padding-bottom: 25px;
+          .intro {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h2 {
+              font-size: 18px;
+              font-weight: 700;
+              color: var(--heading_color);
+              &:last-child {
+                font-size: 26px;
+                color: var(--theme_color);
+              }
+            }
+          }
+          .progress {
+            height: 10px;
+            .progress-bar {
+              background: var(--theme_color);
+            }
+          }
+        }
+      }
+    }
+  }
+}

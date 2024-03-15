@@ -1,0 +1,248 @@
+/*----------------------------------------*/
+/*  22. News Letter
+/*----------------------------------------*/
+
+/* ============= News Letter version one Start =============*/
+
+.newsletter-section-version-one {
+  position: relative;
+  z-index: 9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333d7;
+    z-index: -1;
+  }
+  .wrapper {
+    h2 {
+      text-align: center;
+      font-size: 60px;
+      font-weight: 700;
+      color: var(--bg_white);
+      @media #{$xs} {
+        font-size: 36px;
+      }
+    }
+    p {
+      text-align: center;
+      padding: 0 200px;
+      font-size: 16px;
+      color: var(--bg_white);
+      text-transform: capitalize;
+      @media #{$md, $sm, $xs} {
+        padding: 0;
+      }
+    }
+    .input {
+      display: flex;
+      justify-content: center;
+      input {
+        margin-top: 10px;
+        width: 400px;
+        height: 50px;
+        border-radius: 8px;
+        padding: 5px 15px;
+        border: 2px solid var(--bg_white);
+        background: transparent;
+        color: var(--bg_white);
+        &::placeholder {
+          color: var(--bg_white);
+        }
+      }
+    }
+    .btn-section {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      .btn-shape-normal-outline {
+        padding: 12px;
+        width: 140px;
+      }
+    }
+  }
+}
+
+/* ============= News Letter version two Start =============*/
+
+.newsletter-section-version-two {
+  position: relative;
+  z-index: 9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #33333375;
+    z-index: -1;
+  }
+  .wrapper {
+    h2 {
+      font-size: 46px;
+      color: var(--bg_white);
+      text-transform: capitalize;
+      font-weight: 700;
+      @media #{$sm, $xs} {
+        font-size: 30px;
+      }
+    }
+    p {
+      margin-top: 20px;
+      font-size: 16px;
+      color: var(--bg_white);
+    }
+    .input-section {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      input {
+        width: 330px;
+        height: 50px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        align-items: center;
+      }
+      .btn-shape-normal-outline {
+        padding: 12px;
+        width: 130px;
+      }
+    }
+  }
+  .img-file {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    img {
+      position: absolute;
+      width: 400px;
+      bottom: -115px;
+      @media #{$md, $sm, $xs} {
+        display: none;
+      }
+    }
+    &.rtl {
+      img {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+/* ============= News Letter version three Start =============*/
+
+.newsletter-section-version-three {
+  position: relative;
+  z-index: 9;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #33333375;
+    z-index: -1;
+  }
+  .right-side {
+    .heading-text {
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--bg_white);
+      }
+      h2 {
+        margin-top: 20px;
+        font-size: 46px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--bg_white);
+        @media #{$sm} {
+          font-size: 40px;
+        }
+        @media #{$xs} {
+          font-size: 30px;
+        }
+        @media #{$xxs} {
+          font-size: 26px;
+        }
+      }
+    }
+    .profile-hold {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      .img-file {
+        overflow: hidden;
+        img {
+          border-radius: 100px;
+          border: 5px solid #fff;
+          width: 80px;
+        }
+      }
+      .text-file {
+        h3 {
+          margin: 0;
+          font-size: 22px;
+          color: var(--bg_white);
+        }
+        p {
+          margin: 0;
+          color: var(--bg_white);
+        }
+      }
+    }
+  }
+  .left-side {
+    .input-section {
+      margin-top: 40px;
+      input {
+        width: 100%;
+        height: 55px;
+        padding: 0 10px;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: 2px solid #fff;
+        color: #ddd;
+      }
+      .btn-shape-normal-outline {
+        padding: 12px;
+        width: 130px;
+        margin: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+}
