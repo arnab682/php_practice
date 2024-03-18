@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\backend\BannerController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CompanyController;
@@ -25,10 +26,10 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/employers/account', [FrontendController::class, 'employersAccount']);
-Route::post('/employers/register', [FrontendController::class, 'storeEmployer']);
+Route::post('/employers/register', [RegisteredUserController::class, 'store']);
 
 Route::get('/candidate/account', [FrontendController::class, 'candidateAccount']);
-Route::post('/candidate/create', [FrontendController::class, 'signupCandidateAccount']);
+Route::post('/candidate/register', [RegisteredUserController::class, 'store']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 
 

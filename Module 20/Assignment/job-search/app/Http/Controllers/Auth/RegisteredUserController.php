@@ -8,11 +8,14 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 use Exception;
+
+use Illuminate\Support\Facades\URL;
 class RegisteredUserController extends Controller
 {
     /**
@@ -32,20 +35,89 @@ class RegisteredUserController extends Controller
     {
         try{
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            //'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            //'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        $pro = [];
-        $pro['status'] = 1;
-        $user->Profile()->create($pro);
-        event(new Registered($user));
+        // $user = User::create([
+        //     //'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => Hash::make($request->password),
+        // ]);
+        
+        // $pro = [];
+        // $pro['name'] = $request->name;
+        // $pro['status'] = 1;
+        // $user->Profile()->create($pro);
+        if(URL::current() === URL::to('/').'/register'){
+            $user = User::create([
+                //'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+            
+            $pro = [];
+            $pro['name'] = $request->name;
+            $pro['status'] = 1;
+            $user->Profile()->create($pro);
+            $role = [];
+            $role['superadmin'] = 1;
+            $user->Role()->create($role);
+            //dd('superadmin');die();
+            return response()->json(['status' => 'success', 'message' => "Request Successful"]);
+
+        }
+        elseif(URL::current() === URL::to('/').'/employers/register'){
+            $user = User::create([
+                //'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $data = $request->validate([
+                'name' => ['required', 'string', 'max:255'],
+                'year_of_establishment' => ['required', 'date'],
+                'company_size' => ['required', 'string'],
+                'address' => ['required', 'string'],
+                'company_type' => ['required', 'string'],
+                'url' => ['required', 'string'],
+                'short_description' => ['required',],
+                'license_no' => ['required', 'string'],
+                'number' => ['required', 'string', 'max:15'],
+            ]);
+            
+            //$pro = [];
+            // $pro['name'] = $request->name;
+            // $pro['status'] = 1;
+            $user->Company()->create($data);
+            $role = [];
+            $role['company'] = 1;
+            $user->Role()->create($role);
+           
+            // return redirect()->route('welcome');
+        }
+        elseif(URL::current() === URL::to('/').'/candidate/register'){
+            $user = User::create([
+                //'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $pro = [];
+            $pro['name'] = $request->name;
+            $pro['status'] = 1;
+            $user->Profile()->create($pro);
+            $role = [];
+            $role['candidate'] = 1;
+            $user->Role()->create($role);
+
+          //return redirect()->route('welcome');           
+        }else{
+          return redirect()->route('welcome');
+        }
+        //event(new Registered($user));
+        
 
         Auth::login($user);
 

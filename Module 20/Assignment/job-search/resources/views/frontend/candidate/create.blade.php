@@ -1,7 +1,7 @@
             <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.5s">
                             <h3 style="text-align: center;"><b>Create Account</b></h3><hr>
-                            <form>
+                            <form action="{{ url('/candidate/register') }}" method="post" enctype="multipart/form-data">@csrf
                                 <div class="row g-3">
                                     <div class="col-md-12">
                                         <div class="form-floating">
@@ -11,13 +11,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="email" class="form-control" id="createEmail" placeholder="Your Email">
+                                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
                                             <label for="email">Your Email</label>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="createPassword" placeholder="Your Password">
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
                                             <label for="password">Your Password</label>
                                         </div>
                                     </div>

@@ -19,7 +19,7 @@ class FrontendController extends Controller
     { //dd($request);
         try{
         $data = $request->validate([
-            'companyName' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'year_of_establishment' => ['required', 'date'],
             'company_size' => ['required', 'string'],
             'address' => ['required', 'string'],
@@ -28,22 +28,38 @@ class FrontendController extends Controller
             'short_description' => ['required',],
             'license_no' => ['required', 'string'],
             'number' => ['required', 'string', 'max:15'],
-            'emailEmployer' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Company::class],
-            'passwordEmployer' => ['required', 'min:8'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.Company::class, 'unique:'.User::class],
+            'password' => ['required', 'min:8'],
         ]);
+        $data['name'] = $request->name;
+        $data['year_of_establishment'] = $request->year_of_establishment;
+        $data['company_size'] = $request->company_size;
+        $data['address'] = $request->address;
+        $data['company_type'] = $request->company_type;
+        $data['url'] = $request->url;
+        $data['short_description'] = $request->short_description;
+        $data['license_no'] = $request->license_no;
+        $data['number'] = $request->number;
+        $data['email'] = $request->email;
+        $data['password'] = $request->password;
+       //dd($data);die();
 
-        $company = Company::create([
-           $data
-        ]);
+        $company = Company::create($data);
+
+        //$request->session()->regenerate();
         // $pro = [];
         // $pro['status'] = 1;
         // $user->Profile()->create($pro);
         // event(new Registered($user));
 
         // Auth::login($user);
-        if($company){
-            return redirect()->route('welcome');
-        }else{
+
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('welcome');
+        }
+        else{
             return redirect()->back();
         }
 

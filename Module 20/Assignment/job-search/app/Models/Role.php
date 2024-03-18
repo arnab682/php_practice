@@ -9,8 +9,8 @@ class Role extends Model
 {
     use HasFactory;
 
-    protected $table = 'profiles';
-    protected $fillable = ['superadmin', 'company', 'candidate'];
+    protected $table = 'roles';
+    protected $fillable = ['superadmin', 'company', 'candidate', 'user_id'];
      public function User()
     {
         return $this->belongsTo('App\Models\User');

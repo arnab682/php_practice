@@ -22,10 +22,14 @@ return new class extends Migration
             $table->string('license_no')->unique();
             $table->string('number')->unique();
             $table->string('url')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate(); //->restrictOnDelete()
+            // $table->string('email')->unique();
+            // $table->timestamp('email_verified_at')->nullable();
+            // $table->string('password');
+            //$table->rememberToken();
             $table->tinyInteger('status')->default(1)->comment("0 = decline, 1 = approved");
             // $table->integer('created_by')->nullable();
             // $table->integer('updated_by')->nullable();
@@ -39,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('companies');
+        Schema::dropIfExists('users');
     }
 };

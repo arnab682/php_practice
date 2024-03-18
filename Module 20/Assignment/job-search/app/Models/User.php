@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->hasOne('App\Models\Profile');
     }
 
+    public function Company()
+    {
+        return $this->hasOne('App\Models\Company');
+    }
+
     public function Role()
     {
         return $this->hasOne('App\Models\Role');

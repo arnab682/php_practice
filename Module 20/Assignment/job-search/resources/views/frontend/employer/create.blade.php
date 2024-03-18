@@ -5,8 +5,8 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" name="companyName" id="companyName" placeholder="Your Name">
-                                    <label for="companyName">Company Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                    <label for="name">Company Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -61,14 +61,14 @@
 
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" name="emailEmployer" id="emailEmployer" placeholder="Your Email">
-                                    <label for="emailEmployer">Your Email</label>
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" name="passwordEmployer" id="passwordEmployer" placeholder="Your Password">
-                                    <label for="passwordEmployer">Your Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Your Password">
+                                    <label for="password">Your Password</label>
                                 </div>
                             </div>
 
