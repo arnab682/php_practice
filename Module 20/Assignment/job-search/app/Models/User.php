@@ -45,16 +45,21 @@ class User extends Authenticatable
 
     public function Profile()
     {
-        return $this->hasOne('App\Models\Profile');
+        return $this->hasOne('App\Models\Profile', 'user_id', 'id');
     }
 
     public function Company()
     {
-        return $this->hasOne('App\Models\Company');
+        return $this->hasOne('App\Models\Company', 'user_id', 'id');
     }
 
     public function Role()
     {
-        return $this->hasOne('App\Models\Role');
+        return $this->hasOne('App\Models\Role', 'user_id', 'id');
+    }
+
+    public function social_accounts()
+    {
+        return $this->hasOne('App\Models\Role', 'user_id', 'id');
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\BlogController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,20 +24,30 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+    // return redirect(route('login'));
 })->name('welcome');
+
+
+
+
+    Route::get('/login/{social}', [SocialController::class, 'socialLogin'])->where('social','google');
+    Route::get('/login/{social}/callback', [SocialController::class, 'handleProviderCallback'])->where('social','google');
+    //Route::get('/social/register/{social}', [SocialController::class, 'createUser'])->where('social','google');
 
 Route::get('/employers/account', [FrontendController::class, 'employersAccount']);
 Route::post('/employers/register', [RegisteredUserController::class, 'store']);
 
-Route::get('/candidate/account', [FrontendController::class, 'candidateAccount']);
+Route::get('/candidate/account', [FrontendController::class, 'candidateAccount'])->name('candidate.account');
 Route::post('/candidate/register', [RegisteredUserController::class, 'store']);
 Route::get('/contact', [FrontendController::class, 'contact']);
 
 
 
-Route::get('/dashboard', function () {
-    return view('backend.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('backend.home');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -75,6 +86,34 @@ Route::middleware('auth')->group(function () {
     Route::post('banner/edit', [BannerController::class, 'edit']);
     Route::post('banner/update', [BannerController::class, 'update']);
     Route::post('banner/delete', [BannerController::class, 'destroy']);
+
+
+
+
+Route::get('/dashboard', [ProfileController::class, 'index'])->name('dashboard');
+Route::prefix('candidate')->group(function(){
+    Route::get('/welcome', function () {
+        return view('welcome');
+        // return redirect(route('login'));
+    })->name('candidateDashboard');
+});
+
+Route::prefix('employers')->group(function(){
+    Route::get('/welcome', function () {
+        return view('welcome');
+        // return redirect(route('login'));
+    })->name('employersDashboard');
+});
+
+Route::prefix('superadmin')->group(function(){
+    Route::get('/', function () {
+        return view('backend.home');
+        // return redirect(route('login'));
+    })->name('superadminDashboard');
+});
+
+Route::get('/user/logout', [ProfileController::class, 'logout'])->name('logout');
+
 });
 
 require __DIR__.'/auth.php';

@@ -31,6 +31,9 @@
                                     <div class="col-12">
                                         <button onclick="Save()" id="save-btn" class="btn btn-primary w-100 py-3" type="submit">Sign Up</button>
                                     </div>
+                                    <div class="col-12">
+                                        <a href="{{ url('login/google') }}" class="btn btn-primary w-100 py-3"><i class="fa fa-google-plus"></i>Google Registration</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

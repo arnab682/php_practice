@@ -11,6 +11,11 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display the user's profile form.
      */
@@ -56,5 +61,32 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+
+    public function index()
+    {
+		// \Debugbar::disable();
+        //dd(Auth::user()->Role->superadmin);die();
+        if (Auth::user()->Role->superadmin == true){
+          return redirect(route('superadminDashboard'));
+        }elseif (Auth::user()->Role->company == true) {
+          return redirect(route('employersDashboard'));
+        }else {
+          return redirect(route('candidateDashboard'));
+        }
+    }
+
+
+    public function logout(Request $request)
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+
     }
 }

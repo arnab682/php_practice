@@ -35,6 +35,9 @@
                                     <div class="col-12">
                                         <button onclick="Login()" id="login-btn" class="btn btn-primary w-100 py-3" type="submit">Log In</button>
                                     </div>
+                                    <div class="col-12">
+                                        <a href="{{ url('login/google') }}" class="btn btn-primary w-100 py-3"><i class="fa fa-google-plus"></i>Google Login</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

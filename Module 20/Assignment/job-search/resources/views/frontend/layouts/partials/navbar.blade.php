@@ -26,8 +26,36 @@
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    @if (!Auth::user())
-                    <div class="nav-item dropdown">
+                    @if(Auth::user() && Auth::user()->Role->company == true)
+                        <div class="nav-item dropdown">
+                            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">{{Auth::user()->Company->name}}<i class="fa fa-arrow-right ms-3"></i></a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{url('/profile')}}" class="dropdown-item">
+                                        <b>Profile</b><br>
+                                        <span>Your Profile</span>
+                                    </a><hr>
+                                    <a href="{{url('/logout')}}" class="dropdown-item">
+                                        <b>Logout</b><br>
+                                        <span>Create Account or Sign In</span>
+                                    </a>
+                                </div>
+                        </div>
+                    @elseif(Auth::user() && Auth::user()->Role->candidate == true)
+                        <div class="nav-item dropdown">
+                            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">{{Auth::user()->Profile->name}}<i class="fa fa-arrow-right ms-3"></i></a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{{url('/profile')}}" class="dropdown-item">
+                                        <b>Profile</b><br>
+                                        <span>Your Profile</span>
+                                    </a><hr>
+                                    <a href="{{url('user/logout')}}" class="dropdown-item">
+                                        <b>Logout</b><br>
+                                        <span>Create Account or Sign In</span>
+                                    </a>
+                                </div>
+                        </div>
+                    @else
+                        <div class="nav-item dropdown">
                         <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">Signup/Login<i class="fa fa-arrow-right ms-3"></i></a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="{{url('/employers/account')}}" class="dropdown-item">
@@ -40,21 +68,8 @@
                                 </a>
                             </div>
                     </div>
-                    @else
-                        <div class="nav-item dropdown">
-                            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">{{Auth::user()->name}}<i class="fa fa-arrow-right ms-3"></i></a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{url('/profile')}}" class="dropdown-item">
-                                        <b>Profile</b><br>
-                                        <span>Your Profile</span>
-                                    </a><hr>
-                                    <a href="{{url('/logout')}}" class="dropdown-item">
-                                        <b>Logout</b><br>
-                                        <span>Create Account or Sign In</span>
-                                    </a>
-                                </div>
-                        </div>
                     @endif
+                   
                 </div>
                 
             </div>
