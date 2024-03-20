@@ -60,6 +60,6 @@ class User extends Authenticatable
 
     public function social_accounts()
     {
-        return $this->hasOne('App\Models\Role', 'user_id', 'id');
+        return $this->hasOne('App\Models\SocialAccount', 'user_id', 'id');
     }
 }

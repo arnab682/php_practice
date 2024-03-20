@@ -32,7 +32,6 @@ Route::get('/', function () {
 
     Route::get('/login/{social}', [SocialController::class, 'socialLogin'])->where('social','google');
     Route::get('/login/{social}/callback', [SocialController::class, 'handleProviderCallback'])->where('social','google');
-    //Route::get('/social/register/{social}', [SocialController::class, 'createUser'])->where('social','google');
 
 Route::get('/employers/account', [FrontendController::class, 'employersAccount']);
 Route::post('/employers/register', [RegisteredUserController::class, 'store']);
@@ -40,7 +39,7 @@ Route::post('/employers/register', [RegisteredUserController::class, 'store']);
 Route::get('/candidate/account', [FrontendController::class, 'candidateAccount'])->name('candidate.account');
 Route::post('/candidate/register', [RegisteredUserController::class, 'store']);
 Route::get('/contact', [FrontendController::class, 'contact']);
-
+Route::get('/about', [FrontendController::class, 'about']);
 
 
 // Route::get('/dashboard', function () {

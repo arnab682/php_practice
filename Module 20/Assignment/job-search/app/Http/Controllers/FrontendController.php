@@ -87,5 +87,9 @@ class FrontendController extends Controller
         return view('frontend.contact.index', compact('contact'));
     }
 
+    public function about(){
+        return view('frontend.about.index');
+    }
+
     
 }

@@ -16,8 +16,8 @@ class SocialController extends Controller
 
    public function handleProviderCallback($social)
    {
-       $userSocial = Socialite::driver($social)->user();
-       $user = User::where(['email' => $userSocial->getEmail()])->first();
+       $userSocial = Socialite::driver($social)->user();//dd($social);die();
+       $user = User::where(['email' => $userSocial->email])->first();
        if($user){
            Auth::login($user);
            //return redirect()->action('HomeController@index');
@@ -26,17 +26,21 @@ class SocialController extends Controller
            //return view('auth.register',['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
             //return redirect(route('candidate.account'));
             $user = User::create([
-                    'email' => $userSocial->getEmail(),
+                    'email' => $userSocial->email,
                     //'name' => $providerUser->getName()
                 ]);
-            $user->Profile()->create([
-                'name' => $userSocial->getName()
-            ]);
+            $userData = [];
+            $userData['name'] = $userSocial->name;
+            $user->Profile()->create($userData);
+
+            $socialData = [];
+            $socialData['provider_user_id'] = $userSocial->id;
+            $socialData['provider'] = $social;
             //Create social account
-            $user->social_accounts()->create([
-                    'provider_user_id' => $userSocial->getId(),
-                    'provider' => $userSocial
-                ]);
+            $user->social_accounts()->create($socialData);
+            $role = [];
+            $role['candidate'] = 1;
+            $user->Role()->create($role);
         
             auth()->login($user);
 
