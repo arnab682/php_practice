@@ -35,7 +35,7 @@ class RegisteredUserController extends Controller
     {
         try{
         $request->validate([
-            //'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             //'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -65,6 +65,7 @@ class RegisteredUserController extends Controller
             $role['superadmin'] = 1;
             $user->Role()->create($role);
             //dd('superadmin');die();
+            Auth::login($user);
             return response()->json(['status' => 'success', 'message' => "Request Successful"]);
 
         }
@@ -94,8 +95,8 @@ class RegisteredUserController extends Controller
             $role = [];
             $role['company'] = 1;
             $user->Role()->create($role);
-           
-            // return redirect()->route('welcome');
+            Auth::login($user);
+            return redirect()->route('welcome');
         }
         elseif(URL::current() === URL::to('/').'/candidate/register'){
             $user = User::create([
@@ -111,15 +112,15 @@ class RegisteredUserController extends Controller
             $role = [];
             $role['candidate'] = 1;
             $user->Role()->create($role);
-
-          //return redirect()->route('welcome');           
+            Auth::login($user);
+          return redirect()->route('welcome');           
         }else{
           return redirect()->route('welcome');
         }
         //event(new Registered($user));
         
 
-        Auth::login($user);
+       // Auth::login($user);
 
 //        return redirect(RouteServiceProvider::HOME);
             return response()->json(['status' => 'success', 'message' => "Request Successful"]);

@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\backend\BannerController;
+use App\Http\Controllers\backend\CandidateController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CompanyController;
 use App\Http\Controllers\backend\ContactController;
@@ -33,11 +35,16 @@ Route::get('/', function () {
     Route::get('/login/{social}', [SocialController::class, 'socialLogin'])->where('social','google');
     Route::get('/login/{social}/callback', [SocialController::class, 'handleProviderCallback'])->where('social','google');
 
+//Company
 Route::get('/employers/account', [FrontendController::class, 'employersAccount']);
 Route::post('/employers/register', [RegisteredUserController::class, 'store']);
+Route::post('/employers/forget-password', [PasswordResetLinkController::class, 'create']);
 
+//Candidate
 Route::get('/candidate/account', [FrontendController::class, 'candidateAccount'])->name('candidate.account');
 Route::post('/candidate/register', [RegisteredUserController::class, 'store']);
+
+
 Route::get('/contact', [FrontendController::class, 'contact']);
 Route::get('/about', [FrontendController::class, 'about']);
 
@@ -59,6 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::post('category/edit', [CategoryController::class, 'edit']);
     Route::post('category/update', [CategoryController::class, 'update']);
     Route::post('category/delete', [CategoryController::class, 'destroy']);
+
+    Route::get('candidate', [CandidateController::class, 'index']);
+    Route::get("list-candidate",[CandidateController::class,'CandidateList']);
 
     Route::get('company', [CompanyController::class, 'index']);
     Route::get("list-company",[CompanyController::class,'CategoryList']);

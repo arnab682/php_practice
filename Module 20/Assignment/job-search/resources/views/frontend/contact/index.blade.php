@@ -19,7 +19,7 @@
                                 <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
                                     <i class="fa fa-map-marker-alt text-primary"></i>
                                 </div>
-                                <span>{{$contact->address}}</span>
+                                <span>{{$contact->address ?? null}}</span>
                             </div>
                         </div>
                         <div class="col-md-4 wow fadeIn" data-wow-delay="0.3s">
@@ -27,7 +27,7 @@
                                 <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
                                     <i class="fa fa-envelope-open text-primary"></i>
                                 </div>
-                                <span>{{$contact->email}}</span>
+                                <span>{{$contact->email ?? null}}</span>
                             </div>
                         </div>
                         <div class="col-md-4 wow fadeIn" data-wow-delay="0.5s">
@@ -35,14 +35,14 @@
                                 <div class="bg-white border rounded d-flex flex-shrink-0 align-items-center justify-content-center me-3" style="width: 45px; height: 45px;">
                                     <i class="fa fa-phone-alt text-primary"></i>
                                 </div>
-                                <span>{{$contact->phone}}</span>
+                                <span>{{$contact->phone ?? null}}</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <iframe class="position-relative rounded w-100 h-100"
-                        src="{{$contact->google_map}}"
+                        src="{{$contact->google_map ?? null}}"
                         frameborder="0" style="min-height: 400px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </div>

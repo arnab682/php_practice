@@ -5,7 +5,7 @@
                                 <div class="row g-3">
                                     <div class="col-md-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="fullName" placeholder="Your Name">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
                                             <label for="nameCandidate">Full Name</label>
                                         </div>
                                     </div>

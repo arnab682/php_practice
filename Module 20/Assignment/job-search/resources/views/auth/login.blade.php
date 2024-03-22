@@ -24,7 +24,7 @@
                         <span>
                             <a class="text-center ms-3 h6" href="{{url('/register')}}">Sign Up </a>
                             <span class="ms-1">|</span>
-                            <a class="text-center ms-3 h6" href="{{url('/sendOtp')}}">Forget Password</a>
+                            <a class="text-center ms-3 h6" href="{{url('/forgot-password')}}">Forget Password</a>
                         </span>
                     </div>
                 </div>
