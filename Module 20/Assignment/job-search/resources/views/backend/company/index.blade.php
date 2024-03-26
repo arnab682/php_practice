@@ -49,7 +49,7 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-company",HeaderToken());
+       let res=await axios.get("/superadmin/list-company",HeaderToken());
        hideLoader();
 
        let tableList=$("#tableList");

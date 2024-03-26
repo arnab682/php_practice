@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,8 +31,20 @@ class AuthenticatedSessionController extends Controller
 
             $request->session()->regenerate();
 
-            //return redirect()->intended(RouteServiceProvider::HOME);
-         return response()->json(['status' => 'success', 'message' => "Request Successful"]);
+            $u = Role::where('user_id', Auth::id())->first();
+
+            if($u->superadmin = 1){
+                return response()->json(['status' => 'success', 'message' => "Request Successful"]);
+            } 
+            else {
+                Auth::guard('web')->logout();
+                return response()->json(['status' => 'error', 'message' => "Superadmin email do not match!"]);
+                // return redirect()
+                //     ->back()
+                //     ->with('error', 'Superadmin email do not match!');
+            }    
+            
+         //return response()->json(['status' => 'success', 'message' => "Request Successful"]);
         }catch (\Exception $e){
             return response()->json(['status' => 'fail', 'message' => $e->getMessage()]);
         } 

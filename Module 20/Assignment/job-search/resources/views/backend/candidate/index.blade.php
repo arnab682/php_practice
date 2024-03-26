@@ -42,7 +42,7 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-candidate",HeaderToken());
+       let res=await axios.get("/superadmin/list-candidate",HeaderToken());
        hideLoader();
 
        let tableList=$("#tableList");

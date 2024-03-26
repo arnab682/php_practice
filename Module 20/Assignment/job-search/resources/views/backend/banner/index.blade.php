@@ -44,7 +44,7 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-banner",HeaderToken());
+       let res=await axios.get("/superadmin/list-banner",HeaderToken());
        hideLoader();
 
        let tableList=$("#tableList");

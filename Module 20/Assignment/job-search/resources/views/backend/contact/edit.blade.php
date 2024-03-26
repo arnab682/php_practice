@@ -46,7 +46,7 @@
        try {
            document.getElementById('updateID').value=id;
            showLoader();
-           let res=await axios.post("/contact/edit",{id:id},HeaderToken())
+           let res=await axios.post("/superadmin/contact/edit",{id:id},HeaderToken())
            hideLoader();
            document.getElementById('contactAddress').value=res.data['rows']['address'];
            document.getElementById('contactEmail').value=res.data['rows']['email'];
@@ -72,7 +72,7 @@
 
            document.getElementById('update-modal-close').click();
            showLoader();
-           let res = await axios.post("/contact/update",{address:contactAddress,email:contactEmail,phone:contactPhone,google_map:contactGML,id:updateID},HeaderToken())
+           let res = await axios.post("/superadmin/contact/update",{address:contactAddress,email:contactEmail,phone:contactPhone,google_map:contactGML,id:updateID},HeaderToken())
            hideLoader();
 
            if(res.data['status']==="success"){

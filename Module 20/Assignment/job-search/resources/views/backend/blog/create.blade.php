@@ -41,7 +41,7 @@
             let description = document.getElementById('description').value;
             document.getElementById('modal-close').click();
             showLoader();
-            let res = await axios.post("/blog",{title:title,tag:tag,description:description},HeaderToken())
+            let res = await axios.post("/superadmin/blog",{title:title,tag:tag,description:description},HeaderToken())
             hideLoader();
 
             if(res.data['status']==="success"){

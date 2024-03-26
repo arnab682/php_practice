@@ -29,7 +29,7 @@
              let id=document.getElementById('deleteID').value;
              document.getElementById('delete-modal-close').click();
              showLoader();
-             let res=await axios.post("/blog/delete",{id:id},HeaderToken())
+             let res=await axios.post("/superadmin/blog/delete",{id:id},HeaderToken())
              hideLoader();
              if(res.data['status']==="success"){
                  successToast(res.data['message'])

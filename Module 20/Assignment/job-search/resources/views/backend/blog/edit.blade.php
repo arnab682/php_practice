@@ -41,7 +41,7 @@
        try {
            document.getElementById('updateID').value=id;
            showLoader();
-           let res=await axios.post("/blog/edit",{id:id},HeaderToken())
+           let res=await axios.post("/superadmin/blog/edit",{id:id},HeaderToken())
            hideLoader();
            document.getElementById('titleUpdate').value=res.data['rows']['title'];
            document.getElementById('tagUpdate').value=res.data['rows']['tag'];
@@ -65,7 +65,7 @@
 
            document.getElementById('update-modal-close').click();
            showLoader();
-           let res = await axios.post("/blog/update",{title:title, tag:tag, description:description,id:updateID},HeaderToken())
+           let res = await axios.post("/superadmin/blog/update",{title:title, tag:tag, description:description,id:updateID},HeaderToken())
            hideLoader();
            //console.log(updateID);
 

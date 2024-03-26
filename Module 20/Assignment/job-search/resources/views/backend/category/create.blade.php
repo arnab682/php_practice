@@ -31,7 +31,7 @@
             let categoryName = document.getElementById('categoryName').value;
             document.getElementById('modal-close').click();
             showLoader();
-            let res = await axios.post("/category",{name:categoryName},HeaderToken())
+            let res = await axios.post("/superadmin/category",{name:categoryName},HeaderToken())
             hideLoader();
 
             if(res.data['status']==="success"){

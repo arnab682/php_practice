@@ -45,7 +45,7 @@
        try {
            document.getElementById('updateID').value=id;
            showLoader();
-           let res=await axios.post("/social-link/edit",{id:id},HeaderToken())
+           let res=await axios.post("/superadmin/social-link/edit",{id:id},HeaderToken())
            hideLoader();
            document.getElementById('twitter').value=res.data['rows']['twitter'];
            document.getElementById('facebook').value=res.data['rows']['facebook'];
@@ -71,7 +71,7 @@
 
            document.getElementById('update-modal-close').click();
            showLoader();
-           let res = await axios.post("/social-link/update",{twitter:twitter,facebook:facebook,youtube:youtube,linkedin:linkedin,id:updateID},HeaderToken())
+           let res = await axios.post("/superadmin/social-link/update",{twitter:twitter,facebook:facebook,youtube:youtube,linkedin:linkedin,id:updateID},HeaderToken())
            hideLoader();
 
            if(res.data['status']==="success"){

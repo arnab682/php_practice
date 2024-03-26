@@ -43,7 +43,7 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-social-link",HeaderToken());
+       let res=await axios.get("/superadmin/list-social-link",HeaderToken());
        hideLoader();
 //console.log(res);
        let tableList=$("#tableList");

@@ -23,7 +23,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        //return view('auth.register');
+        return view('auth.login');
     }
 
     /**
@@ -50,26 +51,26 @@ class RegisteredUserController extends Controller
         // $pro['name'] = $request->name;
         // $pro['status'] = 1;
         // $user->Profile()->create($pro);
-        if(URL::current() === URL::to('/').'/register'){
-            $user = User::create([
-                //'name' => $request->name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-            ]);
+        // if(URL::current() === URL::to('/').'/register'){
+        //     $user = User::create([
+        //         //'name' => $request->name,
+        //         'email' => $request->email,
+        //         'password' => Hash::make($request->password),
+        //     ]);
             
-            $pro = [];
-            $pro['name'] = $request->name;
-            $pro['status'] = 1;
-            $user->Profile()->create($pro);
-            $role = [];
-            $role['superadmin'] = 1;
-            $user->Role()->create($role);
-            //dd('superadmin');die();
-            Auth::login($user);
-            return response()->json(['status' => 'success', 'message' => "Request Successful"]);
+        //     $pro = [];
+        //     $pro['name'] = $request->name;
+        //     $pro['status'] = 1;
+        //     $user->Profile()->create($pro);
+        //     $role = [];
+        //     $role['superadmin'] = 1;
+        //     $user->Role()->create($role);
+        //     //dd('superadmin');die();
+        //     Auth::login($user);
+        //     return response()->json(['status' => 'success', 'message' => "Request Successful"]);
 
-        }
-        elseif(URL::current() === URL::to('/').'/employers/register'){
+        // }
+        if(URL::current() === URL::to('/').'/employers/register'){
             $user = User::create([
                 //'name' => $request->name,
                 'email' => $request->email,

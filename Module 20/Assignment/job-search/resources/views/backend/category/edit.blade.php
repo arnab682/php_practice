@@ -33,7 +33,7 @@
        try {
            document.getElementById('updateID').value=id;
            showLoader();
-           let res=await axios.post("/category/edit",{id:id},HeaderToken())
+           let res=await axios.post("/superadmin/category/edit",{id:id},HeaderToken())
            hideLoader();
            document.getElementById('categoryNameUpdate').value=res.data['rows']['name'];
        }catch (e) {
@@ -53,7 +53,7 @@
 
            document.getElementById('update-modal-close').click();
            showLoader();
-           let res = await axios.post("/category/update",{name:categoryName,id:updateID},HeaderToken())
+           let res = await axios.post("/superadmin/category/update",{name:categoryName,id:updateID},HeaderToken())
            hideLoader();
 
            if(res.data['status']==="success"){

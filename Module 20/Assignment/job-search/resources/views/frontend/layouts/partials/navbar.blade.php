@@ -34,10 +34,14 @@
                                         <b>Profile</b><br>
                                         <span>Your Profile</span>
                                     </a><hr>
-                                    <a href="{{url('/logout')}}" class="dropdown-item">
-                                        <b>Logout</b><br>
-                                        <span>Create Account or Sign In</span>
-                                    </a>
+                                    <form method="POST" action="{{ route('logout') }}">@csrf
+                                        <a href="{{route('logout')}}"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();" class="dropdown-item">
+                                            <b>Logout</b><br>
+                                            <span>Create Account or Sign In</span>
+                                        </a>
+                                    </form>
                                 </div>
                         </div>
                     @elseif(Auth::user() && Auth::user()->Role->candidate == true)
@@ -48,17 +52,21 @@
                                         <b>Profile</b><br>
                                         <span>Your Profile</span>
                                     </a><hr>
-                                    <a href="{{url('user/logout')}}" class="dropdown-item">
-                                        <b>Logout</b><br>
-                                        <span>Create Account or Sign In</span>
-                                    </a>
+                                    <form method="POST" action="{{ route('logout') }}">@csrf
+                                        <a href="{{route('logout')}}"
+                                            onclick="event.preventDefault();
+                                                        this.closest('form').submit();" class="dropdown-item">
+                                            <b>Logout</b><br>
+                                            <span>Create Account or Sign In</span>
+                                        </a>
+                                    </form>
                                 </div>
                         </div>
                     @else
                         <div class="nav-item dropdown">
                         <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block nav-link" data-bs-toggle="dropdown">Signup/Login<i class="fa fa-arrow-right ms-3"></i></a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="{{url('/employers/account')}}" class="dropdown-item">
+                                <a href="{{url('/employer/account')}}" class="dropdown-item">
                                     <b>Employers</b><br>
                                     <span>Create Account or Sign In</span>
                                 </a><hr>

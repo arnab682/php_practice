@@ -62,7 +62,7 @@
                 }
               }
               showLoader();
-            let res = await axios.post("{{url('/banner')}}", data, config)
+            let res = await axios.post("{{url('/superadmin/banner')}}", data, config)
            
 
             //let res = await axios.post("/banner",{title:title, short_description:short_description, image:image},HeaderToken())
