@@ -11,5 +11,6 @@ class Company extends Model
     protected $table = 'companies';
     protected $fillable = ['name', 'year_of_establishment', 'company_size',
                         'address', 'company_type', 'url', 'short_description',
-                        'license_no', 'number', 'email', 'password', 'status'];
+                        'license_no', 'number', 'status'];
+                        
 }

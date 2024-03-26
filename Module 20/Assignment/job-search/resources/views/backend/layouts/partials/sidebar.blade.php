@@ -22,17 +22,17 @@
 
     <a href="{{url("/post")}}" class="side-bar-item">
         <i class="bi bi-bag"></i>
-        <span class="side-bar-item-caption">Post</span>
+        <span class="side-bar-item-caption">Job Post</span>
     </a>
 
-    <a href="{{url('/invoicePage')}}" class="side-bar-item">
+    <a href="{{url('/blog')}}" class="side-bar-item">
         <i class="bi bi-receipt"></i>
-        <span class="side-bar-item-caption">Invoice</span>
+        <span class="side-bar-item-caption">Blog Post</span>
     </a>
 
-    <a href="{{url('/reportPage')}}" class="side-bar-item">
+    <a href="{{url('/social-link/list')}}" class="side-bar-item">
         <i class="bi bi-file-earmark-bar-graph"></i>
-        <span class="side-bar-item-caption">Report</span>
+        <span class="side-bar-item-caption">Social Link</span>
     </a>
 
 

@@ -2,24 +2,28 @@
     <div class="modal-dialog modal-md modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Update Category</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Update Social Link</h5>
             </div>
             <div class="modal-body">
                 <form id="update-form">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 p-1">
-                                <label class="form-label">Title *</label>
-                                <input type="text" class="form-control" id="titleUpdate">
+                                <label class="form-label">Twitter *</label>
+                                <input type="text" class="form-control" id="twitter">
                                 <input class="d-none" id="updateID">
                             </div>
                             <div class="col-12 p-1">
-                                <label class="form-label">Tag *</label>
-                                <input type="text" class="form-control" id="tagUpdate">
+                                <label class="form-label">Facebook *</label>
+                                <input type="text" class="form-control" id="facebook">
                             </div>
                             <div class="col-12 p-1">
-                                <label class="form-label">Description *</label>
-                                <textarea class="form-control" placeholder="Leave a message here"  id="descriptionUpdate" style="height: 100px"></textarea>
+                                <label class="form-label">Youtube *</label>
+                                <input type="text" class="form-control" id="youtube">
+                            </div>
+                            <div class="col-12 p-1">
+                                <label class="form-label">Linkedin *</label>
+                                <input type="text" class="form-control" id="linkedin">
                             </div>
                         </div>
                     </div>
@@ -41,11 +45,12 @@
        try {
            document.getElementById('updateID').value=id;
            showLoader();
-           let res=await axios.post("/blog/edit",{id:id},HeaderToken())
+           let res=await axios.post("/social-link/edit",{id:id},HeaderToken())
            hideLoader();
-           document.getElementById('titleUpdate').value=res.data['rows']['title'];
-           document.getElementById('tagUpdate').value=res.data['rows']['tag'];
-           document.getElementById('descriptionUpdate').value=res.data['rows']['description'];
+           document.getElementById('twitter').value=res.data['rows']['twitter'];
+           document.getElementById('facebook').value=res.data['rows']['facebook'];
+           document.getElementById('youtube').value=res.data['rows']['youtube'];
+           document.getElementById('linkedin').value=res.data['rows']['linkedin'];
        }catch (e) {
            unauthorized(e.response.status)
        }
@@ -58,16 +63,16 @@
 
        try {
 
-           let title = document.getElementById('titleUpdate').value;
-           let tag = document.getElementById('tagUpdate').value;
-           let description = document.getElementById('descriptionUpdate').value;
+           let twitter = document.getElementById('twitter').value;
+           let facebook = document.getElementById('facebook').value;
+           let youtube = document.getElementById('youtube').value;
+           let linkedin = document.getElementById('linkedin').value;
            let updateID = document.getElementById('updateID').value;
 
            document.getElementById('update-modal-close').click();
            showLoader();
-           let res = await axios.post("/blog/update",{title:title, tag:tag, description:description,id:updateID},HeaderToken())
+           let res = await axios.post("/social-link/update",{twitter:twitter,facebook:facebook,youtube:youtube,linkedin:linkedin,id:updateID},HeaderToken())
            hideLoader();
-           //console.log(updateID);
 
            if(res.data['status']==="success"){
                document.getElementById("update-form").reset();

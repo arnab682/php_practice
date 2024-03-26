@@ -8,6 +8,8 @@ use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CompanyController;
 use App\Http\Controllers\backend\ContactController;
 use App\Http\Controllers\backend\BlogController;
+use App\Http\Controllers\backend\PostController;
+use App\Http\Controllers\backend\SocialLinkController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialController;
@@ -71,7 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::get("list-candidate",[CandidateController::class,'CandidateList']);
 
     Route::get('company', [CompanyController::class, 'index']);
-    Route::get("list-company",[CompanyController::class,'CategoryList']);
+    Route::get("list-company",[CompanyController::class,'CompanyList']);
     Route::post('company', [CompanyController::class, 'store']);
     Route::post('company/edit', [CompanyController::class, 'edit']);
     Route::post('company/update', [CompanyController::class, 'update']);
@@ -89,6 +91,11 @@ Route::middleware('auth')->group(function () {
     Route::post('contact/edit', [ContactController::class, 'edit']);
     Route::post('contact/update', [ContactController::class, 'update']);
 
+    Route::get('/social-link/list', [SocialLinkController::class, 'index']);
+    Route::get("list-social-link/",[SocialLinkController::class,'SocialLinkList']);
+    Route::post('social-link/edit', [SocialLinkController::class, 'edit']);
+    Route::post('social-link/update', [SocialLinkController::class, 'update']);
+
     Route::get('banner', [BannerController::class, 'index']);
     Route::get("list-banner",[BannerController::class,'BannerList']);
     Route::post('banner', [BannerController::class, 'store']);
@@ -97,6 +104,8 @@ Route::middleware('auth')->group(function () {
     Route::post('banner/delete', [BannerController::class, 'destroy']);
 
 
+    Route::get('post', [PostController::class, 'index']);
+    Route::get("list-post",[PostController::class,'PostList']);
 
 
 Route::get('/dashboard', [ProfileController::class, 'index'])->name('dashboard');

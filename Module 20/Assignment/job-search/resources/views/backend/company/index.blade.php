@@ -21,8 +21,14 @@
 					<tr class="bg-light">
 						<th>No</th>
 						<th>Company Name</th>
-						<th>Employee Number</th>
-						<th>Action</th>
+						<th>Company Email</th>
+						<th>license_no</th>
+						<th>year_of_establishment</th>
+						<th>address</th>
+						<th>company_size</th>
+						<th>company_type</th>
+						<th>number</th>
+						<!-- <th>Action</th> -->
 					</tr>
 					</thead>
 					<tbody id="tableList">
@@ -43,7 +49,7 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-category",HeaderToken());
+       let res=await axios.get("/list-company",HeaderToken());
        hideLoader();
 
        let tableList=$("#tableList");
@@ -56,10 +62,14 @@ async function getList() {
            let row=`<tr>
                     <td>${index+1}</td>
                     <td>${item['name']}</td>
-                    <td>
-                        <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
-                        <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
-                    </td>
+                    <td>${item['email']}</td>
+                    <td>${item['license_no']}</td>
+                    <td>${item['year_of_establishment']}</td>
+                    <td>${item['address']}</td>
+                    <td>${item['company_size']}</td>
+                    <td>${item['company_type']}</td>
+                    <td>${item['number']}</td>
+                    
                  </tr>`
            tableList.append(row)
        })

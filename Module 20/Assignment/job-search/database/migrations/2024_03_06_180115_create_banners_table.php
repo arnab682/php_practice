@@ -16,9 +16,13 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('short_description')->nullable();
             $table->integer('sequence')->default(0);
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(1);
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate(); //->restrictOnDelete()
             $table->timestamps();
         });
     }

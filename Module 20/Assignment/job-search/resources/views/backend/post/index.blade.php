@@ -10,9 +10,7 @@
 					<div class="align-items-center col">
 						<h4>Job Post</h4>
 					</div>
-					<div class="align-items-center col">
-						<button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0 bg-gradient-primary">Create</button>
-					</div>
+					
 				</div>
 				<hr class="bg-secondary"/>
 				<div class="table-responsive">
@@ -20,8 +18,12 @@
 					<thead>
 					<tr class="bg-light">
 						<th>No</th>
+						<th>Job Title</th>
 						<th>Category</th>
-						<th>Action</th>
+						<th>Job Type</th>
+						<th>Salary Range</th>
+						<th>Location</th>
+						<th>Created By</th>
 					</tr>
 					</thead>
 					<tbody id="tableList">
@@ -36,58 +38,51 @@
 
 <script>
 
-// getList();
+getList();
 
-// async function getList() {
+async function getList() {
 
-//    try {
-//        showLoader();
-//        let res=await axios.get("/list-category",HeaderToken());
-//        hideLoader();
+   try {
+       showLoader();
+       let res=await axios.get("/list-post",HeaderToken());
+       hideLoader();
 
-//        let tableList=$("#tableList");
-//        let tableData=$("#tableData");
+       let tableList=$("#tableList");
+       let tableData=$("#tableData");
 
-//        tableData.DataTable().destroy();
-//        tableList.empty();
+       tableData.DataTable().destroy();
+       tableList.empty();
 
-//        res.data['rows'].forEach(function (item,index) {
-//            let row=`<tr>
-//                     <td>${index+1}</td>
-//                     <td>${item['name']}</td>
-//                     <td>
-//                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
-//                         <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
-//                     </td>
-//                  </tr>`
-//            tableList.append(row)
-//        })
+       res.data['rows'].forEach(function (item,index) {
+           let row=`<tr>
+                    <td>${index+1}</td>
+                    <td>${item['job_title']}</td>
+                    <td>${item['category']['name']}</td>
+                    <td>${item['job_type']}</td>
+                    <td>${item['salary_range']}</td>
+                    <td>${item['job_location']}</td>
+                    <td>${item['profile']['name']}</td>
+                 </tr>`
+           tableList.append(row)
+       })
 
-//        $('.editBtn').on('click', async function () {
-//            let id= $(this).data('id');
-//            await FillUpUpdateForm(id)
-//            $("#update-modal").modal('show');
-//        })
+    
 
-//        $('.deleteBtn').on('click',function () {
-//            let id= $(this).data('id');
-//            $("#delete-modal").modal('show');
-//            $("#deleteID").val(id);
-//        })
+      
 
-//        new DataTable('#tableData',{
-//            order:[[0,'desc']],
-//            lengthMenu:[5,10,15,20,30]
-//        });
+       new DataTable('#tableData',{
+           order:[[0,'desc']],
+           lengthMenu:[5,10,15,20,30]
+       });
 
-//    }catch (e) {
-//        unauthorized(e.response.status)
-//    }
+   }catch (e) {
+       unauthorized(e.response.status)
+   }
 
-// }
+}
 
 
-// <script>
+</script>
 
 // include('backend.category.create')
 // include('backend.category.edit')

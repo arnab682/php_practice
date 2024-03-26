@@ -8,11 +8,9 @@
 			<div class="card px-5 py-5">
 				<div class="row justify-content-between ">
 					<div class="align-items-center col">
-						<h4>Blog List</h4>
+						<h4>Social Link</h4>
 					</div>
-					<div class="align-items-center col">
-						<button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0 bg-gradient-primary">Create</button>
-					</div>
+					
 				</div>
 				<hr class="bg-secondary"/>
 				<div class="table-responsive">
@@ -20,9 +18,10 @@
 					<thead>
 					<tr class="bg-light">
 						<th>No</th>
-						<th>Title</th>
-						<th>Tag</th>
-						<th>Description</th>
+						<th>Twitter</th>
+						<th>Facebook</th>
+						<th>Youtube</th>
+						<th>Linkedin</th>
 						<th>Action</th>
 					</tr>
 					</thead>
@@ -44,9 +43,9 @@ async function getList() {
 
    try {
        showLoader();
-       let res=await axios.get("/list-blog",HeaderToken());
+       let res=await axios.get("/list-social-link",HeaderToken());
        hideLoader();
-
+//console.log(res);
        let tableList=$("#tableList");
        let tableData=$("#tableData");
 
@@ -56,12 +55,12 @@ async function getList() {
        res.data['rows'].forEach(function (item,index) {
            let row=`<tr>
                     <td>${index+1}</td>
-                    <td>${item['title']}</td>
-                    <td>${item['tag']}</td>
-                    <td>${item['description']}</td>
+                    <td>${item['twitter']}</td>
+                    <td>${item['facebook']}</td>
+                    <td>${item['youtube']}</td>
+                    <td>${item['linkedin']}</td>
                     <td>
                         <button data-id="${item['id']}" class="btn editBtn btn-sm btn-outline-success">Edit</button>
-                        <button data-id="${item['id']}" class="btn deleteBtn btn-sm btn-outline-danger">Delete</button>
                     </td>
                  </tr>`
            tableList.append(row)
@@ -73,11 +72,6 @@ async function getList() {
            $("#update-modal").modal('show');
        })
 
-       $('.deleteBtn').on('click',function () {
-           let id= $(this).data('id');
-           $("#delete-modal").modal('show');
-           $("#deleteID").val(id);
-       })
 
        new DataTable('#tableData',{
            order:[[0,'desc']],
@@ -85,7 +79,7 @@ async function getList() {
        });
 
    }catch (e) {
-       unauthorized(e.response.status)
+       unauthorized(e.response.status);
    }
 
 }
@@ -93,8 +87,6 @@ async function getList() {
 
 </script>
 
-@include('backend.blog.create')
-@include('backend.blog.edit')
-@include('backend.blog.delete')
+@include('backend.social_link.edit')
 
 @endsection

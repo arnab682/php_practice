@@ -11,14 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_accounts', function (Blueprint $table) {
+        Schema::create('social_links', function (Blueprint $table) {
             $table->id();
-            $table->string('provider_user_id');        //Store the provider's user id.
-            $table->enum('provider', ['facebook', 'twitter', 'linkedin', 'github']); //Store the provider.
+            $table->string('twitter')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->integer('status')->default(1);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')
             ->restrictOnDelete()
             ->cascadeOnUpdate(); //->restrictOnDelete()
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('social_links');
     }
 };

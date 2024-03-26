@@ -17,6 +17,10 @@ return new class extends Migration
             $table->integer('parent_id')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')
+            ->cascadeOnDelete()
+            ->cascadeOnUpdate(); //->restrictOnDelete()
             $table->timestamps();
         });
     }
