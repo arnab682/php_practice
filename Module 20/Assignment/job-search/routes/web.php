@@ -27,10 +27,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // return redirect(route('login'));
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+//     // return redirect(route('login'));
+// })->name('welcome');
+
+Route::get('/', [FrontendController::class, 'index'])->name('welcome');
 
 // Route::post('/candidate/login', function () {
 //     return view('welcome');
@@ -53,8 +55,8 @@ Route::post('/employer/login', [FrontendController::class, 'loginEmployer']);
 
 
 
-Route::get('/contact', [FrontendController::class, 'contact']);
-Route::get('/about', [FrontendController::class, 'about']);
+Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
 
 
 // Route::get('/dashboard', function () {

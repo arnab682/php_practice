@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Banner;
 use App\Models\Company;
 use App\Models\Contact;
 use App\Models\Role;
@@ -14,6 +15,17 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+    public function index(){
+        $banners = Banner::where('status', 1)->get();
+        // foreach($banners->images as $img){
+        //     dd($img->image);die();
+        // }
+        // dd($banners);die();
+        return view('welcome', compact('banners'));
+    }
+
+
+
     public function employersAccount(){
         return view('frontend.employer.account');
     }
@@ -80,11 +92,11 @@ class FrontendController extends Controller
     public function contact(){
         $contact = Contact::first();
         //dd($contact);die();
-        return view('frontend.contact.index', compact('contact'));
+        return view('frontend.layouts.pages.contact.index', compact('contact'));
     }
 
     public function about(){
-        return view('frontend.about.index');
+        return view('frontend.layouts.pages.about.index');
     }
 
     
