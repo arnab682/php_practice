@@ -13,11 +13,15 @@ Account: Superadmin
 7. Blog Post List
 8. Social Link Update
 9. Contant Update(Google map, location, email, phone number)
+10. Ensure can't recover password for forgot-password page.
+11. Stop registation option for this account
 
 Account: Company
 1. Registation
 2. Login
+3. Forgot-password
 
 Account: Candidate
 1. Registation & Social Registation
 2. Login
+3. Forgot-password

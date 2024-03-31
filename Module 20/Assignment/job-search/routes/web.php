@@ -32,6 +32,10 @@ use Illuminate\Support\Facades\Route;
 //     // return redirect(route('login'));
 // })->name('welcome');
 
+Route::get('/forget-password', function(){
+    return view('frontend.layouts.pages.auth.forgot-password');
+});
+
 Route::get('/', [FrontendController::class, 'index'])->name('welcome');
 
 // Route::post('/candidate/login', function () {
@@ -44,6 +48,7 @@ Route::post('/candidate/register', [RegisteredUserController::class, 'store']);
 Route::post('/candidate/login', [FrontendController::class, 'loginCandidate']);
 Route::get('/login/{social}', [SocialController::class, 'socialLogin'])->where('social','google');
 Route::get('/login/{social}/callback', [SocialController::class, 'handleProviderCallback'])->where('social','google');
+//Route::get('/candidate/forgetpassword', [FrontendController::class, 'candidateForgetPassword'])->name('candidate.forgetpassword');
 
    
 

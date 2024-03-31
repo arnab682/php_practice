@@ -47,6 +47,9 @@
                                     <div class="col-12">
                                         <a href="{{ url('login/google') }}" class="btn btn-primary w-100 py-3"><i class="fa fa-google-plus"></i>Google Login</a>
                                     </div>
+                                    <div class="col-12">
+                                        <a href="{{url('/forgot-password')}}" class="btn btn-primary w-100 py-3"><i class="fa fa-google-plus"></i>Forget Password</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

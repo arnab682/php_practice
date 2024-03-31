@@ -53,7 +53,7 @@ class FrontendController extends Controller
 
         }catch (\Exception $e){
             return redirect()
-              ->back()
+              ->route('welcome')
               ->withErrors($e->getMessage());
         }
     }
@@ -83,10 +83,14 @@ class FrontendController extends Controller
 
         }catch (\Exception $e){
             return redirect()
-              ->back()
+              ->route('welcome')
               ->withErrors($e->getMessage());
         }
     }
+
+    // public function candidateForgetPassword(){
+    //     return view('frontend.candidate.forgetpassword');
+    // }
 
 
     public function contact(){

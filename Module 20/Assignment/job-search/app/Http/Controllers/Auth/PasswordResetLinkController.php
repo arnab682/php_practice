@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class PasswordResetLinkController extends Controller
      */
     public function create(): View
     {
-        return view('auth.forgot-password');
+        //return view('auth.forgot-password');
+        return view('frontend.layouts.pages.auth.forgot-password');
     }
 
     /**
@@ -30,6 +32,14 @@ class PasswordResetLinkController extends Controller
             'email' => ['required', 'email'],
         ]);
 
+        //edit code
+        $u = User::join('roles', 'roles.user_id', '=', 'users.id')
+                    ->where('email', $request->email)
+                    ->first();
+        //dd($u['superadmin']);die();
+        if($u['superadmin']==1){
+            return back()->with('error', 'You are not eligible for this mail!');
+        }
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we
         // need to show to the user. Finally, we'll send out a proper response.
