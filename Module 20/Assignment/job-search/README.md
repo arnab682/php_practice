@@ -23,5 +23,5 @@ Account: Company
 
 Account: Candidate
 1. Registation & Social Registation
-2. Login
+2. Login & Social login
 3. Forgot-password

@@ -36,10 +36,16 @@ class PasswordResetLinkController extends Controller
         $u = User::join('roles', 'roles.user_id', '=', 'users.id')
                     ->where('email', $request->email)
                     ->first();
-        //dd($u['superadmin']);die();
-        if($u['superadmin']==1){
+        $s = User::join('social_accounts', 'social_accounts.user_id', '=', 'users.id')
+                    ->where('email', $request->email)
+                    ->first();
+        //dd($u);die();
+        if($u == null){
             return back()->with('error', 'You are not eligible for this mail!');
-        }
+        }elseif($u['superadmin'] == 1 || $s !== null){
+            return back()->with('error', 'You are not eligible for this mail!');
+        }else{
+        
         // We will send the password reset link to this user. Once we have attempted
         // to send the link, we will examine the response then see the message we
         // need to show to the user. Finally, we'll send out a proper response.
@@ -51,5 +57,6 @@ class PasswordResetLinkController extends Controller
                     ? back()->with('status', __($status))
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
+        }
     }
 }

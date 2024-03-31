@@ -32,7 +32,7 @@ use Illuminate\Support\Facades\Route;
 //     // return redirect(route('login'));
 // })->name('welcome');
 
-Route::get('/forget-password', function(){
+Route::get('/profile', function(){
     return view('frontend.layouts.pages.auth.forgot-password');
 });
 

@@ -97,7 +97,7 @@ class RegisteredUserController extends Controller
             $role['company'] = 1;
             $user->Role()->create($role);
             Auth::login($user);
-            return redirect()->route('welcome');
+            return redirect(route('welcome'));
         }
         elseif(URL::current() === URL::to('/').'/candidate/register'){
             $user = User::create([
@@ -114,9 +114,9 @@ class RegisteredUserController extends Controller
             $role['candidate'] = 1;
             $user->Role()->create($role);
             Auth::login($user);
-          return redirect()->route('welcome');           
+          return redirect(route('welcome'));          
         }else{
-          return redirect()->route('welcome');
+          return redirect(route('welcome'));
         }
         //event(new Registered($user));
         

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('social_accounts', function (Blueprint $table) {
             $table->id();
             $table->string('provider_user_id');        //Store the provider's user id.
-            $table->enum('provider', ['facebook', 'twitter', 'linkedin', 'github']); //Store the provider.
+            $table->enum('provider', ['facebook', 'twitter', 'linkedin', 'github', 'google']); //Store the provider.
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')
             ->restrictOnDelete()

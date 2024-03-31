@@ -42,7 +42,7 @@ class FrontendController extends Controller
             $u = Role::where('user_id', Auth::id())->first();
 
             if($u->company){
-                return redirect()->intended(RouteServiceProvider::HOME);
+                return redirect(route('welcome'));
             } 
             else {
                 Auth::guard('web')->logout();
@@ -53,7 +53,7 @@ class FrontendController extends Controller
 
         }catch (\Exception $e){
             return redirect()
-              ->route('welcome')
+              ->back()
               ->withErrors($e->getMessage());
         }
     }
@@ -72,7 +72,7 @@ class FrontendController extends Controller
             $u = Role::where('user_id', Auth::id())->first();
 
             if($u->candidate){
-                return redirect()->intended(RouteServiceProvider::HOME);
+                return redirect(route('welcome'));
             } 
             else {
                 Auth::guard('web')->logout();
